@@ -13,58 +13,6 @@ STATE = DATA / "state.json"
 URL = "https://k5.p-kashikan.jp/urayasu-city/"
 
 
-async def open_search(page):
-    await page.goto(
-        URL,
-        wait_until="domcontentloaded",
-        timeout=60000,
-    )
-
-    await page.wait_for_timeout(4000)
-
-    # 「施設の空きを見る」へ移動
-    for word in [
-        "施設の空きを見る",
-        "施設 の空きを見る",
-        "施設毎の空き状況",
-        "施設の空き",
-    ]:
-        loc = page.get_by_text(word, exact=False)
-
-        for i in range(await loc.count()):
-            try:
-                item = loc.nth(i)
-
-                if await item.is_visible():
-                    await item.click(timeout=8000)
-                    await page.wait_for_timeout(4000)
-                    return
-            except Exception:
-                pass
-
-    # リンクから探す
-    links = page.locator("a")
-
-    for i in range(await links.count()):
-        try:
-            link = links.nth(i)
-
-            text = (await link.inner_text()).strip()
-            href = await link.get_attribute("href") or ""
-
-            if "空き" in text or "facility" in href.lower():
-                await link.click(timeout=8000)
-                await page.wait_for_timeout(4000)
-                return
-
-        except Exception:
-            pass
-
-    raise RuntimeError(
-        "施設空き状況画面へ移動できません"
-    )
-
-
 async def main():
     DATA.mkdir(exist_ok=True)
 
@@ -72,149 +20,214 @@ async def main():
     result = {}
 
     async with async_playwright() as p:
-
-        browser = await p.chromium.launch(
-            headless=True
-        )
+        browser = await p.chromium.launch(headless=True)
 
         context = await browser.new_context(
             locale="ja-JP",
             timezone_id="Asia/Tokyo",
-            viewport={
-                "width": 1400,
-                "height": 1200,
-            },
+            viewport={"width": 1400, "height": 1400},
         )
 
         page = await context.new_page()
 
         try:
-            await open_search(page)
+            # -------------------------
+            # トップページ
+            # -------------------------
+            await page.goto(
+                URL,
+                wait_until="domcontentloaded",
+                timeout=60000,
+            )
+
+            await page.wait_for_timeout(4000)
+
+            # -------------------------
+            # 「施設の空きを見る」へ
+            # -------------------------
+            moved = False
+
+            for word in [
+                "施設の空きを見る",
+                "施設 の空きを見る",
+                "施設毎の空き状況",
+                "施設の空き",
+            ]:
+                loc = page.get_by_text(word, exact=False)
+
+                for i in range(await loc.count()):
+                    try:
+                        item = loc.nth(i)
+
+                        if await item.is_visible():
+                            await item.click(timeout=8000)
+                            moved = True
+                            break
+                    except Exception:
+                        pass
+
+                if moved:
+                    break
+
+            if not moved:
+                raise RuntimeError(
+                    "空き状況画面へ移動できません"
+                )
+
+            await page.wait_for_timeout(4000)
 
             print("SEARCH PAGE:", page.url)
 
-            #
-            # 運動公園テニスコートを選択
-            #
-            facility = page.locator("#scd025")
+            # -------------------------
+            # 「テニス」のチェックボックスを特定
+            # -------------------------
+            tennis_label = page.get_by_text(
+                "テニス",
+                exact=True,
+            )
 
-            if await facility.count() == 0:
-                raise RuntimeError(
-                    "scd025 が見つかりません"
+            tennis_found = False
+
+            for i in range(await tennis_label.count()):
+                label = tennis_label.nth(i)
+
+                try:
+                    if not await label.is_visible():
+                        continue
+
+                    # labelの近くにあるcheckboxを探す
+                    parent = label.locator("xpath=..")
+
+                    checkbox = parent.locator(
+                        'input[type="checkbox"]'
+                    )
+
+                    if await checkbox.count():
+                        await checkbox.first.check()
+                        tennis_found = True
+                        print("TENNIS CHECKED")
+                        break
+
+                    # label自体をクリック
+                    await label.click()
+                    tennis_found = True
+                    print("TENNIS LABEL CLICKED")
+                    break
+
+                except Exception:
+                    pass
+
+            if not tennis_found:
+                # 既知の目的チェック群から試す
+                checks = page.locator(
+                    'input[type="checkbox"][name^="condition_chk"]'
                 )
 
-            await facility.check()
+                print(
+                    "CONDITION CHECKBOXES:",
+                    await checks.count(),
+                )
 
-            print(
-                "FACILITY CHECKED:",
-                await facility.is_checked(),
-            )
+                # HTMLを保存して後で判定
+                for i in range(await checks.count()):
+                    el = checks.nth(i)
 
-            #
-            # 現在選択されている日付を確認
-            #
-            use_date = await page.locator(
-                'input[name="UseDate"]'
-            ).get_attribute("value")
+                    print(
+                        i,
+                        await el.get_attribute("name"),
+                        await el.get_attribute("value"),
+                    )
 
-            print(
-                "USE DATE:",
-                use_date,
-            )
+                raise RuntimeError(
+                    "テニスのチェックボックスを特定できません"
+                )
 
-            #
-            # 検索実行
-            #
-            search_button = page.locator(
+            await page.wait_for_timeout(1000)
+
+            # -------------------------
+            # 検索
+            # -------------------------
+            search = page.locator(
                 'button[name="searchBtn"]'
             )
 
-            if await search_button.count() == 0:
+            visible_search = None
+
+            for i in range(await search.count()):
+                candidate = search.nth(i)
+
+                if await candidate.is_visible():
+                    visible_search = candidate
+                    break
+
+            if visible_search is None:
                 raise RuntimeError(
-                    "検索ボタンが見つかりません"
+                    "表示中の検索ボタンが見つかりません"
                 )
 
-            print("CLICK SEARCH")
-
-            await search_button.click()
-
+            # navigationとclickを同時待機
             try:
-                await page.wait_for_load_state(
-                    "domcontentloaded",
-                    timeout=15000,
-                )
+                async with page.expect_navigation(
+                    timeout=20000
+                ):
+                    await visible_search.click(
+                        timeout=10000
+                    )
             except Exception:
+                # SPA/JS遷移の場合もあるので続行
                 pass
 
-            await page.wait_for_timeout(5000)
+            await page.wait_for_timeout(6000)
 
-            #
-            # 結果画面取得
-            #
+            # -------------------------
+            # 結果画面
+            # -------------------------
             body = await page.locator(
                 "body"
             ).inner_text()
 
-            print(
-                "\nRESULT URL:",
-                page.url,
-            )
+            print("RESULT URL:", page.url)
+            print(body[:40000])
 
-            print(
-                "\nRESULT BODY:"
-            )
-
-            print(
-                body[:30000]
-            )
-
-            #
-            # テーブルを解析
-            #
+            # -------------------------
+            # 全table取得
+            # -------------------------
             tables = []
 
             table_loc = page.locator("table")
-
             table_count = await table_loc.count()
 
-            print(
-                "\nTABLE COUNT:",
-                table_count,
-            )
+            print("TABLE COUNT:", table_count)
 
             for t in range(table_count):
-
                 table = table_loc.nth(t)
-
                 rows = []
 
-                row_loc = table.locator("tr")
+                trs = table.locator("tr")
 
-                for r in range(
-                    await row_loc.count()
-                ):
+                for r in range(await trs.count()):
+                    tr = trs.nth(r)
 
-                    row = row_loc.nth(r)
-
-                    cells = row.locator(
-                        "th, td"
-                    )
-
+                    cells = tr.locator("th, td")
                     values = []
 
-                    for c in range(
-                        await cells.count()
-                    ):
+                    for c in range(await cells.count()):
+                        cell = cells.nth(c)
+
                         try:
-                            txt = (
-                                await cells.nth(c)
-                                .inner_text()
+                            text = (
+                                await cell.inner_text()
                             ).strip()
 
-                            values.append(txt)
+                            html = await cell.inner_html()
+
+                            values.append({
+                                "text": text,
+                                "html": html[:2000],
+                            })
 
                         except Exception:
-                            values.append("")
+                            pass
 
                     if values:
                         rows.append(values)
@@ -222,90 +235,70 @@ async def main():
                 if rows:
                     tables.append(rows)
 
-            #
-            # リンク・ボタンも保存
-            #
-            clickables = []
+            # -------------------------
+            # ○ / × / 空き関連要素
+            # -------------------------
+            availability_elements = []
 
-            elements = page.locator(
-                "a, button, input"
+            all_cells = page.locator(
+                "td, th, a, button"
             )
 
             for i in range(
-                min(
-                    await elements.count(),
-                    1000,
-                )
+                min(await all_cells.count(), 3000)
             ):
-
-                el = elements.nth(i)
+                el = all_cells.nth(i)
 
                 try:
-                    info = await el.evaluate(
-                        """
-                        (e) => ({
-                            tag: e.tagName,
-                            text:
-                                (e.innerText ||
-                                 e.value ||
-                                 '').trim(),
-                            id:
-                                e.id || null,
-                            name:
-                                e.getAttribute('name'),
-                            type:
-                                e.getAttribute('type'),
-                            value:
-                                e.getAttribute('value'),
-                            href:
-                                e.getAttribute('href'),
-                            title:
-                                e.getAttribute('title')
-                        })
-                        """
-                    )
+                    text = (
+                        await el.inner_text()
+                    ).strip()
 
-                    clickables.append(info)
+                    if (
+                        text in ["○", "〇", "×", "△"]
+                        or "空き" in text
+                    ):
+                        info = await el.evaluate(
+                            """
+                            (e) => ({
+                                tag: e.tagName,
+                                text:
+                                    (e.innerText || '')
+                                    .trim(),
+                                className:
+                                    e.className || '',
+                                href:
+                                    e.getAttribute('href'),
+                                html:
+                                    e.outerHTML.slice(
+                                        0, 2000
+                                    )
+                            })
+                            """
+                        )
+
+                        availability_elements.append(
+                            info
+                        )
 
                 except Exception:
                     pass
 
             result = {
-                "facility":
-                    "運動公園テニスコート",
-
-                "facility_code":
-                    "025",
-
-                "use_date":
-                    use_date,
-
-                "result_url":
-                    page.url,
-
-                "page_text":
-                    body[:30000],
-
-                "tables":
-                    tables,
-
-                "clickables":
-                    clickables,
+                "url": page.url,
+                "page_text": body[:40000],
+                "table_count": table_count,
+                "tables": tables,
+                "availability_elements":
+                    availability_elements,
             }
 
         except Exception as e:
-
-            error = (
-                f"浦安市: "
-                f"{type(e).__name__}: {e}"
+            errors.append(
+                f"浦安市: {type(e).__name__}: {e}"
             )
 
-            errors.append(error)
-
-            print(
-                "ERROR:",
-                error,
-            )
+            print("ERROR:", errors[-1])
 
         finally:
             await browser.close()
@@ -317,17 +310,15 @@ async def main():
             .isoformat(),
 
         "mode":
-            "urayasu_real_search_test",
+            "urayasu_tennis_all_facilities_test",
 
         "new_or_reopened": [],
 
         "current": {},
 
-        "errors":
-            errors,
+        "errors": errors,
 
-        "result":
-            result,
+        "result": result,
     }
 
     OUT.write_text(
@@ -339,7 +330,6 @@ async def main():
         encoding="utf-8",
     )
 
-    # まだ本番stateは変更しない
     if not STATE.exists():
         STATE.write_text(
             json.dumps(
