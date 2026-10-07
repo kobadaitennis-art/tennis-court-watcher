@@ -1,13 +1,915 @@
 {
-  "checked_at": "2026-10-07T07:12:56.573244+00:00",
-  "mode": "urayasu_tennis_all_facilities_test",
+  "checked_at": "2026-10-07T07:17:20.105692+00:00",
+  "mode": "urayasu_purpose_result_diagnostic",
   "new_or_reopened": [],
   "current": {},
   "errors": [],
   "result": {
     "url": "https://k5.p-kashikan.jp/urayasu-city/index.php",
     "page_text": "浦安市公共施設予約システム\n  色・文字サイズ設定  \n利用登録\nログイン\nトップページへ\n空き状況の確認\n抽選施設一覧\n催事案内\n施設のご案内\nご利用の手引き\nよくあるご質問\n施設の空き状況\n\n施設の空き状況\n期間の空き状況\n目的で検索\n2026(令和 8)年10月\n8月\t9月\t\t11月\t12月\n日\t月\t火\t水\t木\t金\t土\n \t \t \t \t\n1\n\t\n2\n\t\n3\n\n\n4\n\t\n5\n\t\n6\n\t\n7\n\t\n8\n\t\n9\n\t\n10\n\n\n11\n\t\n12\n\t\n13\n\t\n14\n\t\n15\n\t\n16\n\t\n17\n\n\n18\n\t\n19\n\t\n20\n\t\n21\n\t\n22\n\t\n23\n\t\n24\n\n\n25\n\t\n26\n\t\n27\n\t\n28\n\t\n29\n\t\n30\n\t\n31\n検索条件\n屋外スポーツ\t\nテニス \n野球・ソフトボール \n少年野球 \nサッカー・フットサル \nその他スポーツ\n屋内スポーツ\t\n体育館・武道館\n文化施設・公民館・市民活動\t\n文化施設 \n公民館 \n市民活動\n 検索\n施設一覧\n\n運動公園テニスコート \n\n中央公園テニスコート \n\n美浜運動公園テニスコート \n\n高洲中央公園テニスコート \n\n高洲テニスコート \n\n美浜テニスコート \n\n舞浜テニスコート \n\n高洲南テニスコート\n特定商取引法に基づく表記",
-    "table_count": 3,
+    "facilities": [
+      {
+        "id": "scd025",
+        "value": "025",
+        "name": "運動公園テニスコート"
+      },
+      {
+        "id": "scd002",
+        "value": "002",
+        "name": "中央公園テニスコート"
+      },
+      {
+        "id": "scd005",
+        "value": "005",
+        "name": "美浜運動公園テニスコート"
+      },
+      {
+        "id": "scd007",
+        "value": "007",
+        "name": "高洲中央公園テニスコート"
+      },
+      {
+        "id": "scd003",
+        "value": "003",
+        "name": "高洲テニスコート"
+      },
+      {
+        "id": "scd004",
+        "value": "004",
+        "name": "美浜テニスコート"
+      },
+      {
+        "id": "scd006",
+        "value": "006",
+        "name": "舞浜テニスコート"
+      },
+      {
+        "id": "scd008",
+        "value": "008",
+        "name": "高洲南テニスコート"
+      }
+    ],
+    "forms": [
+      {
+        "action": "index.php",
+        "method": "post",
+        "html": "<form name=\"forma\" method=\"post\" action=\"index.php\">\n<input type=\"hidden\" name=\"op\" value=\"srch_sst\">\n<input type=\"hidden\" name=\"UseYM\" value=\"202610\">\n<input type=\"hidden\" name=\"UseDay\" value=\"7\">\n<input type=\"hidden\" name=\"UseDate\" value=\"20261007\">\n<div class=\"search-btn-area\">\n</div>\n<div id=\"new_calendar\" style=\"margin-bottom:1em;\"><table style=\"max-width:480px;width:98%;margin:0 auto;\"><tbody><tr><th colspan=\"5\"><span class=\"month-cal-head\">2026(令和 8)年10月</span></th></tr><tr style=\"height:30px;\"><td style=\"width:90px;\"><span class=\"week-back\">8月</span></td><td style=\"width:90px;\"><span class=\"day-back\">9月</span></td><td></td><td style=\"width:90px;text-align:right;\"><a href=\"#\" onclick=\"showCalendar(2026,11);\" class=\"day-next\">11月</a></td><td style=\"width:90px;text-align:right;\"><a href=\"#\" onclick=\"showCalendar(2026,12);\" class=\"week-next\">12月</a></td></tr></tbody></table><table class=\"calendar\" style=\"max-width:500px;width:90%;\"><tbody><tr style=\"height:30px;\"><th class=\"bg-sunday-2\">日</th><th class=\"bg-weekday-2\">月</th><th class=\"bg-weekday-2\">火</th><th class=\"bg-weekday-2\">水</th><th class=\"bg-weekday-2\">木</th><th class=\"bg-weekday-2\">金</th><th class=\"bg-saturday-2\">土</th></tr><tr style=\"height:30px;\"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td id=\"day-1\"><a href=\"#\" onclick=\"clickDay('1');\">1</a></td><td id=\"day-2\"><a href=\"#\" onclick=\"clickDay('2');\">2</a></td><td id=\"day-3\"><a href=\"#\" onclick=\"clickDay('3');\">3</a></td></tr><tr style=\"height:30px;\"><td id=\"day-4\"><a href=\"#\" onclick=\"clickDay('4');\">4</a></td><td id=\"day-5\"><a href=\"#\" onclick=\"clickDay('5');\">5</a></td><td id=\"day-6\"><a href=\"#\" onclick=\"clickDay('6');\">6</a></td><td id=\"day-7\" class=\"dselect\"><a href=\"#\" onclick=\"clickDay('7');\">7</a></td><td id=\"day-8\"><a href=\"#\" onclick=\"clickDay('8');\">8</a></td><td id=\"day-9\"><a href=\"#\" onclick=\"clickDay('9');\">9</a></td><td id=\"day-10\"><a href=\"#\" onclick=\"clickDay('10');\">10</a></td></tr><tr style=\"height:30px;\"><td id=\"day-11\"><a href=\"#\" onclick=\"clickDay('11');\">11</a></td><td id=\"day-12\"><a href=\"#\" onclick=\"clickDay('12');\">12</a></td><td id=\"day-13\"><a href=\"#\" onclick=\"clickDay('13');\">13</a></td><td id=\"day-14\"><a href=\"#\" onclick=\"clickDay('14');\">14</a></td><td id=\"day-15\"><a href=\"#\" onclick=\"clickDay('15');\">15</a></td><td id=\"day-16\"><a href=\"#\" onclick=\"clickDay('16');\">16</a></td><td id=\"day-17\"><a href=\"#\" onclick=\"clickDay('17');\">17</a></td></tr><tr style=\"height:30px;\"><td id=\"day-18\"><a href=\"#\" onclick=\"clickDay('18');\">18</a></td><td id=\"day-19\"><a href=\"#\" onclick=\"clickDay('19');\">19</a></td><td id=\"day-20\"><a href=\"#\" onclick=\"clickDay('20');\">20</a></td><td id=\"day-21\"><a href=\"#\" onclick=\"clickDay('21');\">21</a></td><td id=\"day-22\"><a href=\"#\" onclick=\"clickDay('22');\">22</a></td><td id=\"day-23\"><a href=\"#\" onclick=\"clickDay('23');\">23</a></td><td id=\"day-24\"><a href=\"#\" onclick=\"clickDay('24');\">24</a></td></tr><tr style=\"height:30px;\"><td id=\"day-25\"><a href=\"#\" onclick=\"clickDay('25');\">25</a></td><td id=\"day-26\"><a href=\"#\" onclick=\"clickDay('26');\">26</a></td><td id=\"day-27\"><a href=\"#\" onclick=\"clickDay('27');\">27</a></td><td id=\"day-28\"><a href=\"#\" onclick=\"clickDay('28');\">28</a></td><td id=\"day-29\"><a href=\"#\" onclick=\"clickDay('29');\">29</a></td><td id=\"day-30\"><a href=\"#\" onclick=\"clickDay('30');\">30</a></td><td id=\"day-31\"><a href=\"#\" onclick=\"clickDay('31');\">31</a></td></tr></tbody></table></div>\n<div id=\"shisetsu-select-area\">\n<div class=\"search-tabs\">\n\t<div class=\"search-tab\">検索条件</div>\n</div>\n<div class=\"search-body\">\n\t<table>\n\t\t<tbody><tr>\n\t\t<th>屋外スポーツ</th>\n\t\t<td>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"01\" checked=\"checked\"><span class=\"search-label\">テニス</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"02\"><span class=\"search-label\">野球・ソフトボール</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"03\"><span class=\"search-label\">少年野球</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"04\"><span class=\"search-label\">サッカー・フットサル</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"05\"><span class=\"search-label\">その他スポーツ</span></label>\n\t\t\t\t\t</td>\n\t</tr>\n\t\t<tr>\n\t\t<th>屋内スポーツ</th>\n\t\t<td>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[62][]\" value=\"06\"><span class=\"search-label\">体育館・武道館</span></label>\n\t\t\t\t\t</td>\n\t</tr>\n\t\t<tr>\n\t\t<th>文化施設・公民館・市民活動</th>\n\t\t<td>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"07\"><span class=\"search-label\">文化施設</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"08\"><span class=\"search-label\">公民館</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"09\"><span class=\"search-label\">市民活動</span></label>\n\t\t\t\t\t</td>\n\t</tr>\n\t\t</tbody></table>\n\t<div style=\"text-align:center; margin-bottom:1em;\">\n\t\t<button type=\"submit\" name=\"searchBtn\" class=\"icon-btn-01\">\n\t\t\t<i class=\"fa-solid fa-magnifying-glass\"></i>&nbsp;検索\n\t\t</button>\n\t</div>\n</div>\n<div id=\"shisetsu-select\" class=\"search-tabs\" style=\"max-width:1350px\">\n\t<div class=\"search-tab\">施設一覧</div>\n</div>\n<div class=\"search-body\" style=\"max-width:1350px\">\n\t<div class=\"btn-select-area\">\n\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"025\" id=\"scd025\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd025\" class=\"select-bt-1\">\n\t\t\t<img style=\"object-fit: scale-down;\" height=\"120\" width=\"160\" src=\"photos/photo_shisetsu_025.jpg\">\n\t\t\t\t\t\t<br>運動公園テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"002\" id=\"scd002\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd002\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>中央公園テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"005\" id=\"scd005\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd005\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>美浜運動公園テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"007\" id=\"scd007\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd007\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>高洲中央公園テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"003\" id=\"scd003\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd003\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>高洲テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"004\" id=\"scd004\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd004\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>美浜テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"006\" id=\"scd006\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd006\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>舞浜テニスコート\n\t\t</label>\n\t\t\t\t\t<input type=\"radio\" name=\"ShisetsuCode\" value=\"008\" id=\"scd008\" onchange=\"this.form.submit();\">\n\t\t<label for=\"scd008\" class=\"select-bt-1\">\n\t\t\t\t\t\t\t<div class=\"no-image\">\n\t\t\t\t\t<span class=\"fa-stack fa-3x\">\n\t\t\t\t\t\t<i class=\"fa-regular fa-image fa-stack-2x\"></i>\n\t\t\t\t\t\t<i class=\"fa-solid fa-slash fa-stack-2x\"></i>\n\t\t\t\t\t</span>\n\t\t\t\t</div>\n\t\t\t\t\t\t<br>高洲南テニスコート\n\t\t</label>\n\t\t\t</div>\n</div>\n</div>\n</form>"
+      },
+      {
+        "action": "index.php",
+        "method": "post",
+        "html": "<form name=\"formx\" method=\"post\" action=\"index.php\">\n\t<input type=\"hidden\" name=\"op\" value=\"\">\n</form>"
+      }
+    ],
+    "controls": [
+      {
+        "tag": "A",
+        "text": "浦安市公共施設予約システム",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "./",
+        "onclick": null,
+        "className": "trans logo-image"
+      },
+      {
+        "tag": "A",
+        "text": "利用登録",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "gotoPage('agreement');",
+        "className": "menu-button-apply"
+      },
+      {
+        "tag": "A",
+        "text": "ログイン",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "gotoPage('my_page');",
+        "className": "menu-login"
+      },
+      {
+        "tag": "A",
+        "text": "トップページ",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "空き状況の確認",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "抽選施設一覧",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "催事案内",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "施設のご案内",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "ご利用の手引き",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "よくあるご質問",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "トップページへ",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "空き状況の確認",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "抽選施設一覧",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "催事案内",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "施設のご案内",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "ご利用の手引き",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "よくあるご質問",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": null,
+        "className": "navigation-link"
+      },
+      {
+        "tag": "A",
+        "text": "施設の空き状況",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "gotoPage('srch_sst');",
+        "className": "tab on"
+      },
+      {
+        "tag": "A",
+        "text": "期間の空き状況",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "gotoPage('srch_stj');",
+        "className": "tab off"
+      },
+      {
+        "tag": "A",
+        "text": "目的で検索",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "gotoPage('srch_mkt');",
+        "className": "tab off"
+      },
+      {
+        "tag": "INPUT",
+        "text": "srch_sst",
+        "id": null,
+        "name": "op",
+        "type": "hidden",
+        "value": "srch_sst",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "202610",
+        "id": null,
+        "name": "UseYM",
+        "type": "hidden",
+        "value": "202610",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "7",
+        "id": null,
+        "name": "UseDay",
+        "type": "hidden",
+        "value": "7",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "20261007",
+        "id": null,
+        "name": "UseDate",
+        "type": "hidden",
+        "value": "20261007",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "11月",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "showCalendar(2026,11);",
+        "className": "day-next"
+      },
+      {
+        "tag": "A",
+        "text": "12月",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "showCalendar(2026,12);",
+        "className": "week-next"
+      },
+      {
+        "tag": "A",
+        "text": "1",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('1');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "2",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('2');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "3",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('3');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "4",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('4');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "5",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('5');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "6",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('6');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "7",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('7');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "8",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('8');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "9",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('9');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "10",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('10');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "11",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('11');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "12",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('12');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "13",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('13');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "14",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('14');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "15",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('15');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "16",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('16');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "17",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('17');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "18",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('18');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "19",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('19');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "20",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('20');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "21",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('21');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "22",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('22');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "23",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('23');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "24",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('24');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "25",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('25');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "26",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('26');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "27",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('27');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "28",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('28');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "29",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('29');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "30",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('30');",
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "31",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "#",
+        "onclick": "clickDay('31');",
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "01",
+        "id": null,
+        "name": "condition_chk[61][]",
+        "type": "checkbox",
+        "value": "01",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "02",
+        "id": null,
+        "name": "condition_chk[61][]",
+        "type": "checkbox",
+        "value": "02",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "03",
+        "id": null,
+        "name": "condition_chk[61][]",
+        "type": "checkbox",
+        "value": "03",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "04",
+        "id": null,
+        "name": "condition_chk[61][]",
+        "type": "checkbox",
+        "value": "04",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "05",
+        "id": null,
+        "name": "condition_chk[61][]",
+        "type": "checkbox",
+        "value": "05",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "06",
+        "id": null,
+        "name": "condition_chk[62][]",
+        "type": "checkbox",
+        "value": "06",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "07",
+        "id": null,
+        "name": "condition_chk[63][]",
+        "type": "checkbox",
+        "value": "07",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "08",
+        "id": null,
+        "name": "condition_chk[63][]",
+        "type": "checkbox",
+        "value": "08",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "09",
+        "id": null,
+        "name": "condition_chk[63][]",
+        "type": "checkbox",
+        "value": "09",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "BUTTON",
+        "text": "検索",
+        "id": null,
+        "name": "searchBtn",
+        "type": "submit",
+        "value": null,
+        "href": null,
+        "onclick": null,
+        "className": "icon-btn-01"
+      },
+      {
+        "tag": "INPUT",
+        "text": "025",
+        "id": "scd025",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "025",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "002",
+        "id": "scd002",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "002",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "005",
+        "id": "scd005",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "005",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "007",
+        "id": "scd007",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "007",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "003",
+        "id": "scd003",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "003",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "004",
+        "id": "scd004",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "004",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "006",
+        "id": "scd006",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "006",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "008",
+        "id": "scd008",
+        "name": "ShisetsuCode",
+        "type": "radio",
+        "value": "008",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "A",
+        "text": "特定商取引法に基づく表記",
+        "id": null,
+        "name": null,
+        "type": null,
+        "value": null,
+        "href": "index.php?op=sct",
+        "onclick": null,
+        "className": ""
+      },
+      {
+        "tag": "INPUT",
+        "text": "",
+        "id": null,
+        "name": "op",
+        "type": "hidden",
+        "value": "",
+        "href": null,
+        "onclick": null,
+        "className": ""
+      }
+    ],
     "tables": [
       [
         [
@@ -253,36 +1155,6 @@
           }
         ]
       ]
-    ],
-    "availability_elements": [
-      {
-        "tag": "A",
-        "text": "空き状況の確認",
-        "className": "navigation-link",
-        "href": "#",
-        "html": "<a class=\"navigation-link\" href=\"#\">\n\t\t\t\t\t\t\t\t<span class=\"navigation-link-icon\"><i class=\"fa-regular fa-calendar-days fa-lg\"></i></span>\n\t\t\t\t\t\t\t\t<span class=\"navigation-link-text\">空き状況の確認</span>\n\t\t\t\t\t\t\t</a>"
-      },
-      {
-        "tag": "A",
-        "text": "空き状況の確認",
-        "className": "navigation-link",
-        "href": "#",
-        "html": "<a class=\"navigation-link\" href=\"#\">\n\t\t\t\t\t<span class=\"navigation-link-icon\"><i class=\"fa-regular fa-calendar-days\"></i></span>\n\t\t\t\t\t<span class=\"navigation-link-text\">空き状況の確認</span>\n\t\t\t\t</a>"
-      },
-      {
-        "tag": "A",
-        "text": "施設の空き状況",
-        "className": "tab on",
-        "href": "#",
-        "html": "<a href=\"#\" onclick=\"gotoPage('srch_sst');\" class=\"tab on\">施設の空き状況</a>"
-      },
-      {
-        "tag": "A",
-        "text": "期間の空き状況",
-        "className": "tab off",
-        "href": "#",
-        "html": "<a href=\"#\" onclick=\"gotoPage('srch_stj');\" class=\"tab off\">期間の空き状況</a>"
-      }
     ]
   }
 }
