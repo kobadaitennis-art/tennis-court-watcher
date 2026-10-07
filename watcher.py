@@ -1,6 +1,7 @@
 import asyncio
 import json
-from datetime import datetime, timedelta
+import calendar
+from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -10,6 +11,7 @@ ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 STATE_FILE = DATA / "state.json"
 OUT_FILE = DATA / "latest.json"
+NOTICE_FILE = DATA / "notification.txt"
 
 URL = "https://k5.p-kashikan.jp/urayasu-city/"
 JST = ZoneInfo("Asia/Tokyo")
@@ -26,13 +28,111 @@ FACILITIES = [
 ]
 
 
+# =========================================================
+# 日本の祝日
+# =========================================================
+
+def nth_monday(year, month, n):
+    c = calendar.Calendar()
+    mondays = [
+        d for d in c.itermonthdates(year, month)
+        if d.month == month and d.weekday() == 0
+    ]
+    return mondays[n - 1]
+
+
+def vernal_equinox(year):
+    day = int(
+        20.8431
+        + 0.242194 * (year - 1980)
+        - int((year - 1980) / 4)
+    )
+    return date(year, 3, day)
+
+
+def autumn_equinox(year):
+    day = int(
+        23.2488
+        + 0.242194 * (year - 1980)
+        - int((year - 1980) / 4)
+    )
+    return date(year, 9, day)
+
+
+def japanese_holidays(year):
+    h = {
+        date(year, 1, 1): "元日",
+        nth_monday(year, 1, 2): "成人の日",
+        date(year, 2, 11): "建国記念の日",
+        date(year, 2, 23): "天皇誕生日",
+        vernal_equinox(year): "春分の日",
+        date(year, 4, 29): "昭和の日",
+        date(year, 5, 3): "憲法記念日",
+        date(year, 5, 4): "みどりの日",
+        date(year, 5, 5): "こどもの日",
+        nth_monday(year, 7, 3): "海の日",
+        date(year, 8, 11): "山の日",
+        nth_monday(year, 9, 3): "敬老の日",
+        autumn_equinox(year): "秋分の日",
+        nth_monday(year, 10, 2): "スポーツの日",
+        date(year, 11, 3): "文化の日",
+        date(year, 11, 23): "勤労感謝の日",
+    }
+
+    # 振替休日
+    additions = {}
+
+    for d, name in sorted(h.items()):
+        if d.weekday() == 6:
+            sub = d + timedelta(days=1)
+
+            while sub in h or sub in additions:
+                sub += timedelta(days=1)
+
+            additions[sub] = f"{name} 振替休日"
+
+    h.update(additions)
+
+    # 国民の休日
+    start = date(year, 1, 2)
+    end = date(year, 12, 30)
+
+    d = start
+
+    additions = {}
+
+    while d <= end:
+        if (
+            d not in h
+            and d - timedelta(days=1) in h
+            and d + timedelta(days=1) in h
+        ):
+            additions[d] = "国民の休日"
+
+        d += timedelta(days=1)
+
+    h.update(additions)
+
+    return h
+
+
+def holiday_name(d):
+    return japanese_holidays(d.year).get(d)
+
+
+# =========================================================
+# STATE
+# =========================================================
+
 def load_state():
     if not STATE_FILE.exists():
         return {"urayasu": {}}
 
     try:
         data = json.loads(
-            STATE_FILE.read_text(encoding="utf-8")
+            STATE_FILE.read_text(
+                encoding="utf-8"
+            )
         )
 
         if "urayasu" not in data:
@@ -52,6 +152,10 @@ def slot_key(slot):
         slot["time"],
     ])
 
+
+# =========================================================
+# PLAYWRIGHT
+# =========================================================
 
 async def click_text(page, text):
     loc = page.get_by_text(text, exact=True)
@@ -192,7 +296,7 @@ async def select_tennis(page):
     )
 
 
-async def search(page):
+async def run_search(page):
     buttons = page.locator(
         'button[name="searchBtn"], '
         'input[name="searchBtn"]'
@@ -223,6 +327,10 @@ async def search(page):
     )
 
 
+# =========================================================
+# 空き枠解析
+# =========================================================
+
 async def parse_available_slots(
     page,
     target_date,
@@ -230,7 +338,6 @@ async def parse_available_slots(
     slots = []
 
     tables = page.locator("table")
-
     current_facility = None
 
     for t in range(await tables.count()):
@@ -243,7 +350,6 @@ async def parse_available_slots(
         except Exception:
             continue
 
-        # どの施設の表か判定
         facility = None
 
         for name in FACILITIES:
@@ -258,32 +364,29 @@ async def parse_available_slots(
             continue
 
         rows = table.locator("tr")
-
         headers = []
 
         for r in range(await rows.count()):
             row = rows.nth(r)
 
             cells = row.locator("th, td")
-
             texts = []
 
             for c in range(await cells.count()):
                 try:
-                    text = (
+                    txt = (
                         await cells
                         .nth(c)
                         .inner_text()
                     ).strip()
                 except Exception:
-                    text = ""
+                    txt = ""
 
-                texts.append(text)
+                texts.append(txt)
 
             if not texts:
                 continue
 
-            # 時刻ヘッダー
             if texts[0] == "施設":
                 headers = texts[1:]
                 continue
@@ -293,7 +396,6 @@ async def parse_available_slots(
 
             court = texts[0]
 
-            # A面などの行だけ
             if "面" not in court:
                 continue
 
@@ -303,7 +405,6 @@ async def parse_available_slots(
                 if index >= len(headers):
                     break
 
-                # 実際の空き記号だけ
                 if value not in (
                     "○",
                     "〇",
@@ -316,13 +417,16 @@ async def parse_available_slots(
                 if not start.isdigit():
                     continue
 
-                start_hour = int(start)
-
-                # 次のヘッダーを終了時間として使用
                 if index + 1 < len(headers):
                     end = headers[index + 1]
                 else:
-                    end = str(start_hour + 1)
+                    end = str(
+                        int(start) + 1
+                    )
+
+                hname = holiday_name(
+                    target_date
+                )
 
                 slots.append({
                     "date":
@@ -338,6 +442,9 @@ async def parse_available_slots(
                             "土",
                             "日",
                         ][target_date.weekday()],
+
+                    "holiday":
+                        hname,
 
                     "municipality":
                         "浦安市",
@@ -387,16 +494,11 @@ async def check_date(
 
         await page.wait_for_timeout(500)
 
-        await search(page)
+        await run_search(page)
 
         body = await page.locator(
             "body"
         ).inner_text()
-
-        expected = (
-            f"{target_date.year}"
-            f"(令和 "
-        )
 
         date_text = (
             f"{target_date.month}月"
@@ -425,29 +527,99 @@ async def check_date(
         await context.close()
 
 
+# =========================================================
+# 通知文章
+# =========================================================
+
+def build_notification(slots):
+    if not slots:
+        return ""
+
+    lines = [
+        "🎾 浦安市テニスコート 新規空き",
+        "",
+    ]
+
+    current_date = None
+
+    for slot in sorted(
+        slots,
+        key=lambda x: (
+            x["date"],
+            x["facility"],
+            x["court"],
+            x["time"],
+        ),
+    ):
+        if slot["date"] != current_date:
+            current_date = slot["date"]
+
+            d = date.fromisoformat(
+                slot["date"]
+            )
+
+            title = (
+                f"{d.month}/{d.day}"
+                f"（{slot['weekday']}）"
+            )
+
+            if slot.get("holiday"):
+                title += (
+                    f"【{slot['holiday']}】"
+                )
+
+            lines.extend([
+                "",
+                title,
+            ])
+
+        lines.append(
+            f"・{slot['facility']} "
+            f"{slot['court']} "
+            f"{slot['time']}"
+        )
+
+    lines.extend([
+        "",
+        "※空き状況は変動します。",
+        "予約前に浦安市公共施設予約システムで"
+        "最新状況を確認してください。",
+    ])
+
+    return "\n".join(lines)
+
+
+# =========================================================
+# MAIN
+# =========================================================
+
 async def main():
     DATA.mkdir(exist_ok=True)
 
     now = datetime.now(JST)
     today = now.date()
 
-    # 今日〜7日先
     all_dates = [
         today + timedelta(days=i)
         for i in range(8)
     ]
 
-    # まず土日のみ
+    # 土・日・祝
     target_dates = [
-        d
-        for d in all_dates
-        if d.weekday() >= 5
+        d for d in all_dates
+        if (
+            d.weekday() >= 5
+            or holiday_name(d)
+        )
     ]
 
     print(
         "TARGET DATES:",
         [
-            d.isoformat()
+            {
+                "date": d.isoformat(),
+                "holiday": holiday_name(d),
+            }
             for d in target_dates
         ],
     )
@@ -496,31 +668,17 @@ async def main():
                     )
 
                     errors.append(error)
-
                     print("ERROR:", error)
 
         finally:
             await browser.close()
 
-    # ----------------------------------
-    # 新規 / 再出現した空き
-    # ----------------------------------
-
+    # 新規・再出現
     new_or_reopened = []
 
     for key, slot in current_slots.items():
         if key not in previous_urayasu:
             new_or_reopened.append(slot)
-
-    # ----------------------------------
-    # 状態保存
-    #
-    # 全対象日の確認に成功した時だけ
-    # 浦安の状態を置き換える。
-    #
-    # 失敗時に「空きが消えた」と
-    # 誤判定しないため。
-    # ----------------------------------
 
     all_success = (
         len(errors) == 0
@@ -528,8 +686,9 @@ async def main():
         == len(target_dates)
     )
 
-    new_state = previous_state.copy()
+    new_state = dict(previous_state)
 
+    # 全日成功した場合のみ状態更新
     if all_success:
         new_state["urayasu"] = (
             current_slots
@@ -544,16 +703,21 @@ async def main():
             encoding="utf-8",
         )
 
-    # ----------------------------------
-    # latest.json
-    # ----------------------------------
+    notification = build_notification(
+        new_or_reopened
+    )
+
+    NOTICE_FILE.write_text(
+        notification,
+        encoding="utf-8",
+    )
 
     payload = {
         "checked_at":
             now.isoformat(),
 
         "mode":
-            "urayasu_production",
+            "urayasu_production_v2",
 
         "range": {
             "from":
@@ -567,7 +731,20 @@ async def main():
         },
 
         "target_dates": [
-            d.isoformat()
+            {
+                "date": d.isoformat(),
+                "weekday": [
+                    "月",
+                    "火",
+                    "水",
+                    "木",
+                    "金",
+                    "土",
+                    "日",
+                ][d.weekday()],
+                "holiday":
+                    holiday_name(d),
+            }
             for d in target_dates
         ],
 
@@ -593,6 +770,9 @@ async def main():
             list(
                 current_slots.values()
             ),
+
+        "notification":
+            notification,
     }
 
     OUT_FILE.write_text(
