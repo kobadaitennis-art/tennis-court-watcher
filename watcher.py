@@ -24,73 +24,329 @@ TARGET_FACILITIES = [
 ]
 
 
-async def dump_controls(page, label):
+async def dump_page(page, label):
     print("\n" + "=" * 80)
-    print(f"DEBUG: {label}")
+    print("DEBUG:", label)
     print("=" * 80)
 
     print("URL:", page.url)
     print("TITLE:", await page.title())
 
-    body = await page.locator("body").inner_text()
-    print("\nBODY:")
-    print(body[:20000])
+    try:
+        body = await page.locator("body").inner_text()
+        print("\nBODY:")
+        print(body[:20000])
+    except Exception as e:
+        print("BODY ERROR:", e)
 
-    print("\nCHECKBOX / RADIO:")
-    controls = page.locator('input[type="checkbox"], input[type="radio"]')
-    for i in range(min(await controls.count(), 300)):
-        el = controls.nth(i)
-        try:
-            print(
-                i,
-                "type=", await el.get_attribute("type"),
-                "id=", await el.get_attribute("id"),
-                "name=", await el.get_attribute("name"),
-                "value=", await el.get_attribute("value"),
-                "checked=", await el.is_checked(),
-            )
-        except Exception:
-            pass
+    print("\nCLICKABLE ELEMENTS:")
 
-    print("\nLABELS:")
-    labels = page.locator("label")
-    for i in range(min(await labels.count(), 300)):
-        try:
-            txt = (await labels.nth(i).inner_text()).strip()
-            if txt:
-                print(i, repr(txt),
-                      "for=", await labels.nth(i).get_attribute("for"))
-        except Exception:
-            pass
+    loc = page.locator("a, button, [role='button']")
 
-    print("\nBUTTONS:")
-    buttons = page.locator("button")
-    for i in range(min(await buttons.count(), 200)):
-        try:
-            txt = (await buttons.nth(i).inner_text()).strip()
-            print(i, repr(txt))
-        except Exception:
-            pass
-
-
-async def click_text(page, text):
-    loc = page.get_by_text(text, exact=False)
     count = await loc.count()
 
-    print(f"SEARCH TEXT {text!r}: count={count}")
+    for i in range(min(count, 300)):
+        el = loc.nth(i)
 
-    if count:
-        for i in range(count):
-            candidate = loc.nth(i)
-            try:
-                if await candidate.is_visible():
-                    print("CLICK:", repr(await candidate.inner_text()))
-                    await candidate.click(timeout=10000)
+        try:
+            txt = (
+                await el.inner_text()
+            ).strip().replace("\n", " ")
+
+            href = await el.get_attribute("href")
+
+            if txt or href:
+                print(
+                    i,
+                    "text=",
+                    repr(txt),
+                    "href=",
+                    repr(href),
+                )
+        except Exception:
+            pass
+
+
+async def open_facility_search(page):
+    print("\n>>> 施設空き検索への移動開始")
+
+    #
+    # 方法1: テキスト
+    #
+    candidates = [
+        "施設の空きを見る",
+        "施設 の空きを見る",
+        "施設毎の空き状況",
+        "施設の空き",
+    ]
+
+    for word in candidates:
+        try:
+            loc = page.get_by_text(
+                word,
+                exact=False,
+            )
+
+            count = await loc.count()
+
+            print(
+                "TEXT",
+                repr(word),
+                "count=",
+                count,
+            )
+
+            for i in range(count):
+                item = loc.nth(i)
+
+                try:
+                    if not await item.is_visible():
+                        continue
+
+                    print(
+                        "TEXT CLICK TRY:",
+                        await item.evaluate(
+                            "(e) => e.outerHTML"
+                        ),
+                    )
+
+                    await item.click(
+                        timeout=8000,
+                    )
+
+                    print(
+                        "TEXT CLICK SUCCESS"
+                    )
+
                     return True
-            except Exception as e:
-                print("CLICK FAILED:", e)
+
+                except Exception as e:
+                    print(
+                        "TEXT CLICK ERROR:",
+                        e,
+                    )
+
+        except Exception as e:
+            print(
+                "TEXT SEARCH ERROR:",
+                e,
+            )
+
+    #
+    # 方法2: リンクを全部調べる
+    #
+    print("\n>>> リンクから検索")
+
+    links = page.locator("a")
+
+    count = await links.count()
+
+    for i in range(count):
+        link = links.nth(i)
+
+        try:
+            text = (
+                await link.inner_text()
+            ).strip()
+
+            href = await link.get_attribute(
+                "href"
+            )
+
+            combined = (
+                (text or "")
+                + " "
+                + (href or "")
+            )
+
+            if (
+                "空き" in combined
+                or "facility" in combined.lower()
+            ):
+                print(
+                    "LINK CANDIDATE:",
+                    repr(text),
+                    repr(href),
+                )
+
+                try:
+                    await link.click(
+                        timeout=8000
+                    )
+
+                    print(
+                        "LINK CLICK SUCCESS"
+                    )
+
+                    return True
+
+                except Exception as e:
+                    print(
+                        "LINK CLICK ERROR:",
+                        e,
+                    )
+
+        except Exception:
+            pass
+
+    #
+    # 方法3: JSで文字列を含む要素を探索
+    #
+    print("\n>>> JavaScript探索")
+
+    result = await page.evaluate(
+        """
+        () => {
+            const all =
+                Array.from(
+                    document.querySelectorAll('*')
+                );
+
+            const matches = [];
+
+            for (const el of all) {
+                const text =
+                    (el.innerText || '').trim();
+
+                if (
+                    text === '施設の空きを見る'
+                    || text.includes(
+                        '施設の空きを見る'
+                    )
+                ) {
+                    matches.push({
+                        tag: el.tagName,
+                        text: text.slice(0, 200),
+                        html:
+                            el.outerHTML.slice(
+                                0,
+                                1000
+                            )
+                    });
+                }
+            }
+
+            return matches.slice(0, 30);
+        }
+        """
+    )
+
+    print(
+        "JS MATCHES:",
+        json.dumps(
+            result,
+            ensure_ascii=False,
+            indent=2,
+        ),
+    )
+
+    #
+    # 方法4: locatorから親要素をクリック
+    #
+    try:
+        text_loc = page.get_by_text(
+            "施設の空きを見る",
+            exact=False,
+        )
+
+        count = await text_loc.count()
+
+        for i in range(count):
+            item = text_loc.nth(i)
+
+            for level in range(1, 5):
+                try:
+                    parent = item.locator(
+                        "/.." * level
+                    )
+
+                    html = await parent.evaluate(
+                        "(e) => e.outerHTML"
+                    )
+
+                    print(
+                        "PARENT TRY",
+                        level,
+                        html[:1000],
+                    )
+
+                    await parent.click(
+                        timeout=5000,
+                    )
+
+                    print(
+                        "PARENT CLICK SUCCESS"
+                    )
+
+                    return True
+
+                except Exception:
+                    pass
+
+    except Exception:
+        pass
 
     return False
+
+
+async def dump_search_controls(page):
+    print("\n" + "=" * 80)
+    print("SEARCH SCREEN CONTROLS")
+    print("=" * 80)
+
+    controls = page.locator(
+        "input, button, select, label, a"
+    )
+
+    count = await controls.count()
+
+    for i in range(min(count, 500)):
+        el = controls.nth(i)
+
+        try:
+            tag = await el.evaluate(
+                "(e) => e.tagName"
+            )
+
+            text = (
+                await el.inner_text()
+            ).strip().replace("\n", " ")
+
+            attrs = await el.evaluate(
+                """
+                (e) => ({
+                    id: e.id || null,
+                    name:
+                        e.getAttribute('name'),
+                    type:
+                        e.getAttribute('type'),
+                    value:
+                        e.getAttribute('value'),
+                    href:
+                        e.getAttribute('href'),
+                    forAttr:
+                        e.getAttribute('for'),
+                    checked:
+                        e.checked === true
+                })
+                """
+            )
+
+            if (
+                text
+                or attrs["id"]
+                or attrs["name"]
+                or attrs["value"]
+            ):
+                print(
+                    i,
+                    tag,
+                    repr(text),
+                    attrs,
+                )
+
+        except Exception:
+            pass
 
 
 async def main():
@@ -100,18 +356,26 @@ async def main():
     diagnostics = []
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=True)
+
+        browser = await p.chromium.launch(
+            headless=True
+        )
 
         context = await browser.new_context(
             locale="ja-JP",
             timezone_id="Asia/Tokyo",
-            viewport={"width": 1400, "height": 1200},
+            viewport={
+                "width": 1400,
+                "height": 1200,
+            },
         )
 
         page = await context.new_page()
 
         try:
-            print("=== URAYASU START ===")
+            print(
+                "=== URAYASU START ==="
+            )
 
             await page.goto(
                 URL,
@@ -119,77 +383,50 @@ async def main():
                 timeout=60000,
             )
 
-            await page.wait_for_timeout(2500)
+            await page.wait_for_timeout(
+                5000
+            )
 
-            if not await click_text(page, "施設の空きを見る"):
+            await dump_page(
+                page,
+                "TOP PAGE",
+            )
+
+            moved = await open_facility_search(
+                page
+            )
+
+            if not moved:
                 raise RuntimeError(
-                    "施設の空きを見る をクリックできません"
+                    "施設空き検索画面へ"
+                    "移動できませんでした"
                 )
 
-            await page.wait_for_timeout(3000)
-
-            await dump_controls(
-                page,
-                "FACILITY SEARCH PAGE",
-            )
-
-            #
-            # 1. 「テニス」を選択
-            #
-            print("\n>>> テニスを選択")
-
-            tennis = page.get_by_text(
-                "テニス",
-                exact=True,
-            )
-
-            tennis_count = await tennis.count()
-            print("tennis count =", tennis_count)
-
-            tennis_clicked = False
-
-            for i in range(tennis_count):
-                try:
-                    item = tennis.nth(i)
-
-                    if await item.is_visible():
-                        print(
-                            "tennis candidate:",
-                            await item.evaluate(
-                                "(e) => e.outerHTML"
-                            ),
-                        )
-
-                        await item.click(
-                            timeout=10000
-                        )
-
-                        tennis_clicked = True
-                        print("テニスクリック成功")
-                        break
-
-                except Exception as e:
-                    print(
-                        "tennis click error:",
-                        e,
-                    )
-
-            if not tennis_clicked:
-                print(
-                    "テニス文字を直接クリックできませんでした"
+            try:
+                await page.wait_for_load_state(
+                    "domcontentloaded",
+                    timeout=15000,
                 )
+            except Exception:
+                pass
 
-            await page.wait_for_timeout(2500)
-
-            await dump_controls(
-                page,
-                "AFTER TENNIS CLICK",
+            await page.wait_for_timeout(
+                4000
             )
 
-            #
-            # 2. 対象施設を探す
-            #
-            print("\n>>> 対象施設を確認")
+            print(
+                "\n>>> 移動後URL:",
+                page.url,
+            )
+
+            await dump_page(
+                page,
+                "AFTER FACILITY SEARCH",
+            )
+
+            await dump_search_controls(
+                page
+            )
 
             body = await page.locator(
                 "body"
@@ -201,165 +438,43 @@ async def main():
                 if facility in body:
                     found.append(facility)
                     print(
-                        "FOUND FACILITY:",
-                        facility,
-                    )
-                else:
-                    print(
-                        "NOT FOUND:",
+                        "FOUND:",
                         facility,
                     )
 
-            diagnostics.append(
-                {
-                    "step": "facility_detection",
-                    "found": found,
-                }
-            )
-
-            #
-            # 3. 施設をクリックしてみる
-            #
-            print("\n>>> 施設選択テスト")
-
-            selected = []
-
-            for facility in TARGET_FACILITIES:
-                loc = page.get_by_text(
-                    facility,
-                    exact=False,
-                )
-
-                count = await loc.count()
-
-                print(
-                    facility,
-                    "count=",
-                    count,
-                )
-
-                if not count:
-                    continue
-
-                for i in range(count):
-                    try:
-                        item = loc.nth(i)
-
-                        if not await item.is_visible():
-                            continue
-
-                        html = await item.evaluate(
-                            "(e) => e.outerHTML"
-                        )
-
-                        print(
-                            "FACILITY HTML:",
-                            html,
-                        )
-
-                        await item.click(
-                            timeout=5000
-                        )
-
-                        selected.append(
-                            facility
-                        )
-
-                        print(
-                            "SELECTED:",
-                            facility,
-                        )
-
-                        break
-
-                    except Exception as e:
-                        print(
-                            "facility click error:",
-                            facility,
-                            e,
-                        )
-
-            await page.wait_for_timeout(2500)
-
-            await dump_controls(
-                page,
-                "AFTER FACILITY SELECTION",
-            )
-
-            #
-            # 4. 検索ボタンを調査
-            #
-            print("\n>>> 検索ボタン候補")
-
-            search_words = [
-                "検索",
-                "次へ",
-                "表示",
-                "空き状況",
+            tennis_lines = [
+                line.strip()
+                for line in body.splitlines()
+                if "テニス" in line
             ]
 
-            search_candidates = []
+            print(
+                "\nTENNIS LINES:"
+            )
 
-            for word in search_words:
-                loc = page.get_by_text(
-                    word,
-                    exact=True,
-                )
-
-                count = await loc.count()
-
-                print(
-                    word,
-                    "count=",
-                    count,
-                )
-
-                for i in range(count):
-                    try:
-                        el = loc.nth(i)
-
-                        if await el.is_visible():
-                            html = await el.evaluate(
-                                "(e) => e.outerHTML"
-                            )
-
-                            search_candidates.append(
-                                {
-                                    "word": word,
-                                    "html": html,
-                                }
-                            )
-
-                            print(
-                                "SEARCH CANDIDATE:",
-                                word,
-                                html,
-                            )
-
-                    except Exception:
-                        pass
+            for line in tennis_lines[:200]:
+                print(line)
 
             diagnostics.append(
                 {
-                    "step": "selection",
-                    "selected": selected,
-                    "search_candidates":
-                        search_candidates,
+                    "step":
+                        "facility_search_opened",
+                    "url":
+                        page.url,
+                    "facilities_found":
+                        found,
+                    "tennis_lines":
+                        tennis_lines[:200],
                 }
             )
 
-            #
-            # 最終画面のHTML構造も取得
-            #
-            html = await page.content()
-
-            print("\nHTML EXCERPT:")
-            print(html[:30000])
-
         except Exception as e:
+
             error = (
-                f"浦安市: "
-                f"{type(e).__name__}: {e}"
+                "浦安市: "
+                + type(e).__name__
+                + ": "
+                + str(e)
             )
 
             errors.append(error)
@@ -368,7 +483,7 @@ async def main():
             print(error)
 
             try:
-                await dump_controls(
+                await dump_page(
                     page,
                     "ERROR PAGE",
                 )
@@ -383,12 +498,19 @@ async def main():
             datetime.now()
             .astimezone()
             .isoformat(),
+
         "mode":
-            "urayasu_selector_diagnostic",
+            "urayasu_navigation_diagnostic",
+
         "new_or_reopened": [],
+
         "current": {},
-        "errors": errors,
-        "diagnostics": diagnostics,
+
+        "errors":
+            errors,
+
+        "diagnostics":
+            diagnostics,
     }
 
     OUT.write_text(
@@ -400,7 +522,6 @@ async def main():
         encoding="utf-8",
     )
 
-    # 診断中は既存stateを壊さない
     if not STATE.exists():
         STATE.write_text(
             json.dumps(
@@ -411,9 +532,9 @@ async def main():
             encoding="utf-8",
         )
 
-    print("\n" + "=" * 80)
-    print("FINAL RESULT")
-    print("=" * 80)
+    print(
+        "\nFINAL RESULT:"
+    )
 
     print(
         json.dumps(
