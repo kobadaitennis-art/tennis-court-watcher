@@ -1,22 +1,37 @@
 {
-  "checked_at": "2026-10-07T16:38:36.788518+09:00",
-  "mode": "urayasu_production",
+  "checked_at": "2026-10-07T16:45:23.200497+09:00",
+  "mode": "urayasu_production_v2",
   "range": {
     "from": "2026-10-07",
     "to": "2026-10-14"
   },
   "target_dates": [
-    "2026-10-10",
-    "2026-10-11"
+    {
+      "date": "2026-10-10",
+      "weekday": "土",
+      "holiday": null
+    },
+    {
+      "date": "2026-10-11",
+      "weekday": "日",
+      "holiday": null
+    },
+    {
+      "date": "2026-10-12",
+      "weekday": "月",
+      "holiday": "スポーツの日"
+    }
   ],
   "checked_dates": [
     "2026-10-10",
-    "2026-10-11"
+    "2026-10-11",
+    "2026-10-12"
   ],
   "success": true,
   "errors": [],
   "available_count": 0,
   "new_or_reopened_count": 0,
   "new_or_reopened": [],
-  "current": []
+  "current": [],
+  "notification": ""
 }
