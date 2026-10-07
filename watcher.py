@@ -15,7 +15,6 @@ URL = "https://k5.p-kashikan.jp/urayasu-city/"
 
 async def main():
     DATA.mkdir(exist_ok=True)
-
     errors = []
     result = {}
 
@@ -25,258 +24,163 @@ async def main():
         context = await browser.new_context(
             locale="ja-JP",
             timezone_id="Asia/Tokyo",
-            viewport={"width": 1400, "height": 1400},
+            viewport={"width": 1400, "height": 1600},
         )
 
         page = await context.new_page()
 
         try:
-            # -----------------------------
             # 1. トップページ
-            # -----------------------------
             await page.goto(
                 URL,
                 wait_until="domcontentloaded",
                 timeout=60000,
             )
+            await page.wait_for_timeout(2500)
 
-            await page.wait_for_timeout(4000)
-
-            # -----------------------------
-            # 2. 空き状況画面へ
-            # -----------------------------
-            moved = False
-
-            for word in [
+            # 2. 空き状況ページへ
+            start = page.get_by_text(
                 "施設の空きを見る",
-                "施設 の空きを見る",
-                "施設毎の空き状況",
-                "施設の空き",
-            ]:
-                loc = page.get_by_text(word, exact=False)
-
-                for i in range(await loc.count()):
-                    try:
-                        item = loc.nth(i)
-
-                        if await item.is_visible():
-                            await item.click(timeout=8000)
-                            moved = True
-                            break
-
-                    except Exception:
-                        pass
-
-                if moved:
-                    break
-
-            if not moved:
-                raise RuntimeError(
-                    "空き状況画面へ移動できません"
-                )
-
-            await page.wait_for_timeout(4000)
-
-            # -----------------------------
-            # 3. テニスを選択
-            # -----------------------------
-            tennis = page.get_by_text(
-                "テニス",
-                exact=True,
+                exact=False,
             )
 
-            tennis_clicked = False
+            clicked = False
 
-            for i in range(await tennis.count()):
+            for i in range(await start.count()):
                 try:
-                    el = tennis.nth(i)
-
-                    if not await el.is_visible():
-                        continue
-
-                    await el.click(timeout=8000)
-                    tennis_clicked = True
-                    break
-
-                except Exception:
-                    pass
-
-            if not tennis_clicked:
-                raise RuntimeError(
-                    "テニスを選択できません"
-                )
-
-            await page.wait_for_timeout(1000)
-
-            # -----------------------------
-            # 4. 表示中の検索ボタン
-            # -----------------------------
-            buttons = page.locator(
-                'button[name="searchBtn"]'
-            )
-
-            search_button = None
-
-            for i in range(await buttons.count()):
-                b = buttons.nth(i)
-
-                try:
-                    if await b.is_visible():
-                        search_button = b
+                    el = start.nth(i)
+                    if await el.is_visible():
+                        await el.click(
+                            timeout=10000,
+                            no_wait_after=True,
+                        )
+                        clicked = True
                         break
                 except Exception:
                     pass
 
-            if search_button is None:
+            if not clicked:
                 raise RuntimeError(
-                    "検索ボタンが見つかりません"
+                    "施設の空きを見るを開けません"
                 )
 
-            await search_button.click(
+            await page.wait_for_timeout(3000)
+
+            # 3. 「目的で検索」タブへ
+            purpose = page.locator(
+                'a[onclick*="srch_mkt"]'
+            )
+
+            if not await purpose.count():
+                raise RuntimeError(
+                    "目的で検索タブが見つかりません"
+                )
+
+            await purpose.first.click(
                 timeout=10000,
                 no_wait_after=True,
             )
 
-            await page.wait_for_timeout(5000)
+            await page.wait_for_timeout(3000)
+
+            print("PURPOSE PAGE:", page.url)
 
             print(
-                "AFTER TENNIS SEARCH:",
-                page.url,
+                (
+                    await page.locator("body").inner_text()
+                )[:20000]
             )
 
-            # -----------------------------
-            # 5. 現在のフォーム構造を取得
-            # -----------------------------
-            forms = []
-
-            form_loc = page.locator("form")
-
-            for i in range(await form_loc.count()):
-                form = form_loc.nth(i)
-
-                try:
-                    forms.append(
-                        await form.evaluate(
-                            """
-                            (e) => ({
-                                action:
-                                    e.getAttribute('action'),
-                                method:
-                                    e.getAttribute('method'),
-                                html:
-                                    e.outerHTML.slice(
-                                        0, 30000
-                                    )
-                            })
-                            """
-                        )
-                    )
-                except Exception:
-                    pass
-
-            # -----------------------------
-            # 6. 8施設の入力情報
-            # -----------------------------
-            facilities = []
-
-            radios = page.locator(
-                'input[name="ShisetsuCode"]'
+            # 4. テニスのcheckboxを直接特定
+            tennis = page.locator(
+                'input[name="condition_chk[61][]"][value="01"]'
             )
 
-            for i in range(await radios.count()):
-                radio = radios.nth(i)
+            if not await tennis.count():
+                # ページ構造が違う場合の予備
+                labels = page.locator("label")
 
-                try:
-                    rid = await radio.get_attribute("id")
+                found = False
 
-                    label_text = ""
+                for i in range(await labels.count()):
+                    label = labels.nth(i)
 
-                    if rid:
-                        label = page.locator(
-                            f'label[for="{rid}"]'
-                        )
+                    try:
+                        text = (
+                            await label.inner_text()
+                        ).strip()
 
-                        if await label.count():
-                            label_text = (
-                                await label.first.inner_text()
-                            ).strip()
+                        if text == "テニス":
+                            await label.click()
+                            found = True
+                            break
+                    except Exception:
+                        pass
 
-                    if "テニスコート" in label_text:
-                        facilities.append({
-                            "id": rid,
-                            "value":
-                                await radio.get_attribute(
-                                    "value"
-                                ),
-                            "name": label_text,
-                        })
-
-                except Exception:
-                    pass
-
-            print(
-                "TENNIS FACILITIES:",
-                json.dumps(
-                    facilities,
-                    ensure_ascii=False,
-                    indent=2,
-                ),
-            )
-
-            # -----------------------------
-            # 7. リンク・ボタン・onclick取得
-            # -----------------------------
-            controls = []
-
-            elems = page.locator(
-                "a, button, input"
-            )
-
-            for i in range(
-                min(await elems.count(), 1500)
-            ):
-                el = elems.nth(i)
-
-                try:
-                    info = await el.evaluate(
-                        """
-                        (e) => ({
-                            tag: e.tagName,
-                            text:
-                                (e.innerText ||
-                                 e.value ||
-                                 '').trim(),
-                            id:
-                                e.id || null,
-                            name:
-                                e.getAttribute('name'),
-                            type:
-                                e.getAttribute('type'),
-                            value:
-                                e.getAttribute('value'),
-                            href:
-                                e.getAttribute('href'),
-                            onclick:
-                                e.getAttribute('onclick'),
-                            className:
-                                e.className || ''
-                        })
-                        """
+                if not found:
+                    raise RuntimeError(
+                        "テニスを選択できません"
                     )
 
-                    controls.append(info)
+            else:
+                await tennis.first.check()
 
+            print("TENNIS SELECTED")
+
+            # 5. 現在の日付情報
+            use_date = await page.locator(
+                'input[name="UseDate"]'
+            ).get_attribute("value")
+
+            print("USE DATE:", use_date)
+
+            # 6. 検索ボタン
+            search = page.locator(
+                'button[name="searchBtn"]'
+            )
+
+            visible = None
+
+            for i in range(await search.count()):
+                b = search.nth(i)
+
+                try:
+                    if await b.is_visible():
+                        visible = b
+                        break
                 except Exception:
                     pass
 
-            # -----------------------------
-            # 8. もし既に結果表なら取得
-            # -----------------------------
+            if visible is None:
+                raise RuntimeError(
+                    "検索ボタンが見つかりません"
+                )
+
+            # 検索実行
+            await visible.click(
+                timeout=10000,
+                no_wait_after=True,
+            )
+
+            await page.wait_for_timeout(6000)
+
+            # 7. 結果画面
+            body = await page.locator(
+                "body"
+            ).inner_text()
+
+            print("RESULT URL:", page.url)
+            print(body[:50000])
+
+            # 8. 全テーブル取得
             tables = []
 
             table_loc = page.locator("table")
+            table_count = await table_loc.count()
 
-            for t in range(await table_loc.count()):
+            print("TABLE COUNT:", table_count)
+
+            for t in range(table_count):
                 table = table_loc.nth(t)
                 rows = []
 
@@ -284,57 +188,102 @@ async def main():
 
                 for r in range(await trs.count()):
                     tr = trs.nth(r)
-                    cells = tr.locator("th, td")
 
-                    values = []
+                    cells = tr.locator(
+                        "th, td"
+                    )
+
+                    row = []
 
                     for c in range(await cells.count()):
+                        cell = cells.nth(c)
+
                         try:
-                            cell = cells.nth(c)
+                            row.append({
+                                "text": (
+                                    await cell.inner_text()
+                                ).strip(),
 
-                            values.append({
-                                "text":
-                                    (
-                                        await cell.inner_text()
-                                    ).strip(),
+                                "html": (
+                                    await cell.inner_html()
+                                )[:3000],
 
-                                "html":
-                                    (
-                                        await cell.inner_html()
-                                    )[:3000],
+                                "class": (
+                                    await cell.get_attribute(
+                                        "class"
+                                    )
+                                ),
                             })
 
                         except Exception:
                             pass
 
-                    if values:
-                        rows.append(values)
+                    if row:
+                        rows.append(row)
 
                 if rows:
                     tables.append(rows)
 
-            body = await page.locator(
-                "body"
-            ).inner_text()
+            # 9. 空き枠らしいセルを抽出
+            availability = []
+
+            cells = page.locator("td")
+
+            for i in range(await cells.count()):
+                cell = cells.nth(i)
+
+                try:
+                    text = (
+                        await cell.inner_text()
+                    ).strip()
+
+                    html = await cell.inner_html()
+
+                    cls = await cell.get_attribute(
+                        "class"
+                    )
+
+                    # ○・△・×・受付などを含むセル
+                    if (
+                        text
+                        or "href" in html
+                        or "onclick" in html
+                    ):
+                        if (
+                            text in [
+                                "○",
+                                "〇",
+                                "△",
+                                "×",
+                            ]
+                            or "空" in text
+                            or "受付" in text
+                            or "reserve" in html.lower()
+                            or "yoyaku" in html.lower()
+                        ):
+                            availability.append({
+                                "text": text,
+                                "class": cls,
+                                "html": html[:3000],
+                            })
+
+                except Exception:
+                    pass
 
             result = {
+                "use_date": use_date,
                 "url": page.url,
-                "page_text": body[:40000],
-                "facilities": facilities,
-                "forms": forms,
-                "controls": controls,
+                "page_text": body[:50000],
+                "table_count": table_count,
                 "tables": tables,
+                "availability": availability,
             }
 
         except Exception as e:
             errors.append(
                 f"浦安市: {type(e).__name__}: {e}"
             )
-
-            print(
-                "ERROR:",
-                errors[-1],
-            )
+            print("ERROR:", errors[-1])
 
         finally:
             await browser.close()
@@ -346,7 +295,7 @@ async def main():
             .isoformat(),
 
         "mode":
-            "urayasu_purpose_result_diagnostic",
+            "urayasu_purpose_tennis_result",
 
         "new_or_reopened": [],
 
@@ -375,8 +324,6 @@ async def main():
             ),
             encoding="utf-8",
         )
-
-    print("\nFINAL RESULT")
 
     print(
         json.dumps(
