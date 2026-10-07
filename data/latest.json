@@ -1,10 +1,34 @@
 {
-  "checked_at": "2026-10-07T06:53:09.795392+00:00",
-  "mode": "urayasu_selector_diagnostic",
+  "checked_at": "2026-10-07T06:58:08.919828+00:00",
+  "mode": "urayasu_navigation_diagnostic",
   "new_or_reopened": [],
   "current": {},
-  "errors": [
-    "浦安市: RuntimeError: 施設の空きを見る をクリックできません"
-  ],
-  "diagnostics": []
+  "errors": [],
+  "diagnostics": [
+    {
+      "step": "facility_search_opened",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/index.php",
+      "facilities_found": [
+        "運動公園テニスコート",
+        "中央公園テニスコート",
+        "美浜運動公園テニスコート",
+        "高洲中央公園テニスコート",
+        "高洲テニスコート",
+        "美浜テニスコート",
+        "舞浜テニスコート",
+        "高洲南テニスコート"
+      ],
+      "tennis_lines": [
+        "テニス",
+        "運動公園テニスコート",
+        "中央公園テニスコート",
+        "美浜運動公園テニスコート",
+        "高洲中央公園テニスコート",
+        "高洲テニスコート",
+        "美浜テニスコート",
+        "舞浜テニスコート",
+        "高洲南テニスコート"
+      ]
+    }
+  ]
 }
