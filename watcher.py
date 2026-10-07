@@ -31,9 +31,9 @@ async def main():
         page = await context.new_page()
 
         try:
-            # -------------------------
-            # トップページ
-            # -------------------------
+            # -----------------------------
+            # 1. トップページ
+            # -----------------------------
             await page.goto(
                 URL,
                 wait_until="domcontentloaded",
@@ -42,9 +42,9 @@ async def main():
 
             await page.wait_for_timeout(4000)
 
-            # -------------------------
-            # 「施設の空きを見る」へ
-            # -------------------------
+            # -----------------------------
+            # 2. 空き状況画面へ
+            # -----------------------------
             moved = False
 
             for word in [
@@ -63,6 +63,7 @@ async def main():
                             await item.click(timeout=8000)
                             moved = True
                             break
+
                     except Exception:
                         pass
 
@@ -76,130 +77,206 @@ async def main():
 
             await page.wait_for_timeout(4000)
 
-            print("SEARCH PAGE:", page.url)
-
-            # -------------------------
-            # 「テニス」のチェックボックスを特定
-            # -------------------------
-            tennis_label = page.get_by_text(
+            # -----------------------------
+            # 3. テニスを選択
+            # -----------------------------
+            tennis = page.get_by_text(
                 "テニス",
                 exact=True,
             )
 
-            tennis_found = False
+            tennis_clicked = False
 
-            for i in range(await tennis_label.count()):
-                label = tennis_label.nth(i)
-
+            for i in range(await tennis.count()):
                 try:
-                    if not await label.is_visible():
+                    el = tennis.nth(i)
+
+                    if not await el.is_visible():
                         continue
 
-                    # labelの近くにあるcheckboxを探す
-                    parent = label.locator("xpath=..")
-
-                    checkbox = parent.locator(
-                        'input[type="checkbox"]'
-                    )
-
-                    if await checkbox.count():
-                        await checkbox.first.check()
-                        tennis_found = True
-                        print("TENNIS CHECKED")
-                        break
-
-                    # label自体をクリック
-                    await label.click()
-                    tennis_found = True
-                    print("TENNIS LABEL CLICKED")
+                    await el.click(timeout=8000)
+                    tennis_clicked = True
                     break
 
                 except Exception:
                     pass
 
-            if not tennis_found:
-                # 既知の目的チェック群から試す
-                checks = page.locator(
-                    'input[type="checkbox"][name^="condition_chk"]'
-                )
-
-                print(
-                    "CONDITION CHECKBOXES:",
-                    await checks.count(),
-                )
-
-                # HTMLを保存して後で判定
-                for i in range(await checks.count()):
-                    el = checks.nth(i)
-
-                    print(
-                        i,
-                        await el.get_attribute("name"),
-                        await el.get_attribute("value"),
-                    )
-
+            if not tennis_clicked:
                 raise RuntimeError(
-                    "テニスのチェックボックスを特定できません"
+                    "テニスを選択できません"
                 )
 
             await page.wait_for_timeout(1000)
 
-            # -------------------------
-            # 検索
-            # -------------------------
-            search = page.locator(
+            # -----------------------------
+            # 4. 表示中の検索ボタン
+            # -----------------------------
+            buttons = page.locator(
                 'button[name="searchBtn"]'
             )
 
-            visible_search = None
+            search_button = None
 
-            for i in range(await search.count()):
-                candidate = search.nth(i)
+            for i in range(await buttons.count()):
+                b = buttons.nth(i)
 
-                if await candidate.is_visible():
-                    visible_search = candidate
-                    break
+                try:
+                    if await b.is_visible():
+                        search_button = b
+                        break
+                except Exception:
+                    pass
 
-            if visible_search is None:
+            if search_button is None:
                 raise RuntimeError(
-                    "表示中の検索ボタンが見つかりません"
+                    "検索ボタンが見つかりません"
                 )
 
-            # navigationとclickを同時待機
-            try:
-                async with page.expect_navigation(
-                    timeout=20000
-                ):
-                    await visible_search.click(
-                        timeout=10000
+            await search_button.click(
+                timeout=10000,
+                no_wait_after=True,
+            )
+
+            await page.wait_for_timeout(5000)
+
+            print(
+                "AFTER TENNIS SEARCH:",
+                page.url,
+            )
+
+            # -----------------------------
+            # 5. 現在のフォーム構造を取得
+            # -----------------------------
+            forms = []
+
+            form_loc = page.locator("form")
+
+            for i in range(await form_loc.count()):
+                form = form_loc.nth(i)
+
+                try:
+                    forms.append(
+                        await form.evaluate(
+                            """
+                            (e) => ({
+                                action:
+                                    e.getAttribute('action'),
+                                method:
+                                    e.getAttribute('method'),
+                                html:
+                                    e.outerHTML.slice(
+                                        0, 30000
+                                    )
+                            })
+                            """
+                        )
                     )
-            except Exception:
-                # SPA/JS遷移の場合もあるので続行
-                pass
+                except Exception:
+                    pass
 
-            await page.wait_for_timeout(6000)
+            # -----------------------------
+            # 6. 8施設の入力情報
+            # -----------------------------
+            facilities = []
 
-            # -------------------------
-            # 結果画面
-            # -------------------------
-            body = await page.locator(
-                "body"
-            ).inner_text()
+            radios = page.locator(
+                'input[name="ShisetsuCode"]'
+            )
 
-            print("RESULT URL:", page.url)
-            print(body[:40000])
+            for i in range(await radios.count()):
+                radio = radios.nth(i)
 
-            # -------------------------
-            # 全table取得
-            # -------------------------
+                try:
+                    rid = await radio.get_attribute("id")
+
+                    label_text = ""
+
+                    if rid:
+                        label = page.locator(
+                            f'label[for="{rid}"]'
+                        )
+
+                        if await label.count():
+                            label_text = (
+                                await label.first.inner_text()
+                            ).strip()
+
+                    if "テニスコート" in label_text:
+                        facilities.append({
+                            "id": rid,
+                            "value":
+                                await radio.get_attribute(
+                                    "value"
+                                ),
+                            "name": label_text,
+                        })
+
+                except Exception:
+                    pass
+
+            print(
+                "TENNIS FACILITIES:",
+                json.dumps(
+                    facilities,
+                    ensure_ascii=False,
+                    indent=2,
+                ),
+            )
+
+            # -----------------------------
+            # 7. リンク・ボタン・onclick取得
+            # -----------------------------
+            controls = []
+
+            elems = page.locator(
+                "a, button, input"
+            )
+
+            for i in range(
+                min(await elems.count(), 1500)
+            ):
+                el = elems.nth(i)
+
+                try:
+                    info = await el.evaluate(
+                        """
+                        (e) => ({
+                            tag: e.tagName,
+                            text:
+                                (e.innerText ||
+                                 e.value ||
+                                 '').trim(),
+                            id:
+                                e.id || null,
+                            name:
+                                e.getAttribute('name'),
+                            type:
+                                e.getAttribute('type'),
+                            value:
+                                e.getAttribute('value'),
+                            href:
+                                e.getAttribute('href'),
+                            onclick:
+                                e.getAttribute('onclick'),
+                            className:
+                                e.className || ''
+                        })
+                        """
+                    )
+
+                    controls.append(info)
+
+                except Exception:
+                    pass
+
+            # -----------------------------
+            # 8. もし既に結果表なら取得
+            # -----------------------------
             tables = []
 
             table_loc = page.locator("table")
-            table_count = await table_loc.count()
 
-            print("TABLE COUNT:", table_count)
-
-            for t in range(table_count):
+            for t in range(await table_loc.count()):
                 table = table_loc.nth(t)
                 rows = []
 
@@ -207,23 +284,24 @@ async def main():
 
                 for r in range(await trs.count()):
                     tr = trs.nth(r)
-
                     cells = tr.locator("th, td")
+
                     values = []
 
                     for c in range(await cells.count()):
-                        cell = cells.nth(c)
-
                         try:
-                            text = (
-                                await cell.inner_text()
-                            ).strip()
-
-                            html = await cell.inner_html()
+                            cell = cells.nth(c)
 
                             values.append({
-                                "text": text,
-                                "html": html[:2000],
+                                "text":
+                                    (
+                                        await cell.inner_text()
+                                    ).strip(),
+
+                                "html":
+                                    (
+                                        await cell.inner_html()
+                                    )[:3000],
                             })
 
                         except Exception:
@@ -235,62 +313,17 @@ async def main():
                 if rows:
                     tables.append(rows)
 
-            # -------------------------
-            # ○ / × / 空き関連要素
-            # -------------------------
-            availability_elements = []
-
-            all_cells = page.locator(
-                "td, th, a, button"
-            )
-
-            for i in range(
-                min(await all_cells.count(), 3000)
-            ):
-                el = all_cells.nth(i)
-
-                try:
-                    text = (
-                        await el.inner_text()
-                    ).strip()
-
-                    if (
-                        text in ["○", "〇", "×", "△"]
-                        or "空き" in text
-                    ):
-                        info = await el.evaluate(
-                            """
-                            (e) => ({
-                                tag: e.tagName,
-                                text:
-                                    (e.innerText || '')
-                                    .trim(),
-                                className:
-                                    e.className || '',
-                                href:
-                                    e.getAttribute('href'),
-                                html:
-                                    e.outerHTML.slice(
-                                        0, 2000
-                                    )
-                            })
-                            """
-                        )
-
-                        availability_elements.append(
-                            info
-                        )
-
-                except Exception:
-                    pass
+            body = await page.locator(
+                "body"
+            ).inner_text()
 
             result = {
                 "url": page.url,
                 "page_text": body[:40000],
-                "table_count": table_count,
+                "facilities": facilities,
+                "forms": forms,
+                "controls": controls,
                 "tables": tables,
-                "availability_elements":
-                    availability_elements,
             }
 
         except Exception as e:
@@ -298,7 +331,10 @@ async def main():
                 f"浦安市: {type(e).__name__}: {e}"
             )
 
-            print("ERROR:", errors[-1])
+            print(
+                "ERROR:",
+                errors[-1],
+            )
 
         finally:
             await browser.close()
@@ -310,7 +346,7 @@ async def main():
             .isoformat(),
 
         "mode":
-            "urayasu_tennis_all_facilities_test",
+            "urayasu_purpose_result_diagnostic",
 
         "new_or_reopened": [],
 
