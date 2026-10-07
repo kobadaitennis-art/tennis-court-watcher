@@ -1,10 +1,288 @@
 {
-  "checked_at": "2026-10-07T07:07:05.337697+00:00",
-  "mode": "urayasu_real_search_test",
+  "checked_at": "2026-10-07T07:12:56.573244+00:00",
+  "mode": "urayasu_tennis_all_facilities_test",
   "new_or_reopened": [],
   "current": {},
-  "errors": [
-    "浦安市: TimeoutError: Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"button[name=\\\"searchBtn\\\"]\")\n    - waiting for navigation to finish...\n    - navigated to \"https://k5.p-kashikan.jp/urayasu-city/index.php\"\n    - locator resolved to <button type=\"submit\" name=\"searchBtn\" class=\"icon-btn-01\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not visible\n    - retrying click action\n      - waiting 100ms\n    57 × waiting for element to be visible, enabled and stable\n       - element is not visible\n     - retrying click action\n       - waiting 500ms\n"
-  ],
-  "result": {}
+  "errors": [],
+  "result": {
+    "url": "https://k5.p-kashikan.jp/urayasu-city/index.php",
+    "page_text": "浦安市公共施設予約システム\n  色・文字サイズ設定  \n利用登録\nログイン\nトップページへ\n空き状況の確認\n抽選施設一覧\n催事案内\n施設のご案内\nご利用の手引き\nよくあるご質問\n施設の空き状況\n\n施設の空き状況\n期間の空き状況\n目的で検索\n2026(令和 8)年10月\n8月\t9月\t\t11月\t12月\n日\t月\t火\t水\t木\t金\t土\n \t \t \t \t\n1\n\t\n2\n\t\n3\n\n\n4\n\t\n5\n\t\n6\n\t\n7\n\t\n8\n\t\n9\n\t\n10\n\n\n11\n\t\n12\n\t\n13\n\t\n14\n\t\n15\n\t\n16\n\t\n17\n\n\n18\n\t\n19\n\t\n20\n\t\n21\n\t\n22\n\t\n23\n\t\n24\n\n\n25\n\t\n26\n\t\n27\n\t\n28\n\t\n29\n\t\n30\n\t\n31\n検索条件\n屋外スポーツ\t\nテニス \n野球・ソフトボール \n少年野球 \nサッカー・フットサル \nその他スポーツ\n屋内スポーツ\t\n体育館・武道館\n文化施設・公民館・市民活動\t\n文化施設 \n公民館 \n市民活動\n 検索\n施設一覧\n\n運動公園テニスコート \n\n中央公園テニスコート \n\n美浜運動公園テニスコート \n\n高洲中央公園テニスコート \n\n高洲テニスコート \n\n美浜テニスコート \n\n舞浜テニスコート \n\n高洲南テニスコート\n特定商取引法に基づく表記",
+    "table_count": 3,
+    "tables": [
+      [
+        [
+          {
+            "text": "2026(令和 8)年10月",
+            "html": "<span class=\"month-cal-head\">2026(令和 8)年10月</span>"
+          }
+        ],
+        [
+          {
+            "text": "8月",
+            "html": "<span class=\"week-back\">8月</span>"
+          },
+          {
+            "text": "9月",
+            "html": "<span class=\"day-back\">9月</span>"
+          },
+          {
+            "text": "",
+            "html": ""
+          },
+          {
+            "text": "11月",
+            "html": "<a href=\"#\" onclick=\"showCalendar(2026,11);\" class=\"day-next\">11月</a>"
+          },
+          {
+            "text": "12月",
+            "html": "<a href=\"#\" onclick=\"showCalendar(2026,12);\" class=\"week-next\">12月</a>"
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "text": "日",
+            "html": "日"
+          },
+          {
+            "text": "月",
+            "html": "月"
+          },
+          {
+            "text": "火",
+            "html": "火"
+          },
+          {
+            "text": "水",
+            "html": "水"
+          },
+          {
+            "text": "木",
+            "html": "木"
+          },
+          {
+            "text": "金",
+            "html": "金"
+          },
+          {
+            "text": "土",
+            "html": "土"
+          }
+        ],
+        [
+          {
+            "text": "",
+            "html": "&nbsp;"
+          },
+          {
+            "text": "",
+            "html": "&nbsp;"
+          },
+          {
+            "text": "",
+            "html": "&nbsp;"
+          },
+          {
+            "text": "",
+            "html": "&nbsp;"
+          },
+          {
+            "text": "1",
+            "html": "<a href=\"#\" onclick=\"clickDay('1');\">1</a>"
+          },
+          {
+            "text": "2",
+            "html": "<a href=\"#\" onclick=\"clickDay('2');\">2</a>"
+          },
+          {
+            "text": "3",
+            "html": "<a href=\"#\" onclick=\"clickDay('3');\">3</a>"
+          }
+        ],
+        [
+          {
+            "text": "4",
+            "html": "<a href=\"#\" onclick=\"clickDay('4');\">4</a>"
+          },
+          {
+            "text": "5",
+            "html": "<a href=\"#\" onclick=\"clickDay('5');\">5</a>"
+          },
+          {
+            "text": "6",
+            "html": "<a href=\"#\" onclick=\"clickDay('6');\">6</a>"
+          },
+          {
+            "text": "7",
+            "html": "<a href=\"#\" onclick=\"clickDay('7');\">7</a>"
+          },
+          {
+            "text": "8",
+            "html": "<a href=\"#\" onclick=\"clickDay('8');\">8</a>"
+          },
+          {
+            "text": "9",
+            "html": "<a href=\"#\" onclick=\"clickDay('9');\">9</a>"
+          },
+          {
+            "text": "10",
+            "html": "<a href=\"#\" onclick=\"clickDay('10');\">10</a>"
+          }
+        ],
+        [
+          {
+            "text": "11",
+            "html": "<a href=\"#\" onclick=\"clickDay('11');\">11</a>"
+          },
+          {
+            "text": "12",
+            "html": "<a href=\"#\" onclick=\"clickDay('12');\">12</a>"
+          },
+          {
+            "text": "13",
+            "html": "<a href=\"#\" onclick=\"clickDay('13');\">13</a>"
+          },
+          {
+            "text": "14",
+            "html": "<a href=\"#\" onclick=\"clickDay('14');\">14</a>"
+          },
+          {
+            "text": "15",
+            "html": "<a href=\"#\" onclick=\"clickDay('15');\">15</a>"
+          },
+          {
+            "text": "16",
+            "html": "<a href=\"#\" onclick=\"clickDay('16');\">16</a>"
+          },
+          {
+            "text": "17",
+            "html": "<a href=\"#\" onclick=\"clickDay('17');\">17</a>"
+          }
+        ],
+        [
+          {
+            "text": "18",
+            "html": "<a href=\"#\" onclick=\"clickDay('18');\">18</a>"
+          },
+          {
+            "text": "19",
+            "html": "<a href=\"#\" onclick=\"clickDay('19');\">19</a>"
+          },
+          {
+            "text": "20",
+            "html": "<a href=\"#\" onclick=\"clickDay('20');\">20</a>"
+          },
+          {
+            "text": "21",
+            "html": "<a href=\"#\" onclick=\"clickDay('21');\">21</a>"
+          },
+          {
+            "text": "22",
+            "html": "<a href=\"#\" onclick=\"clickDay('22');\">22</a>"
+          },
+          {
+            "text": "23",
+            "html": "<a href=\"#\" onclick=\"clickDay('23');\">23</a>"
+          },
+          {
+            "text": "24",
+            "html": "<a href=\"#\" onclick=\"clickDay('24');\">24</a>"
+          }
+        ],
+        [
+          {
+            "text": "25",
+            "html": "<a href=\"#\" onclick=\"clickDay('25');\">25</a>"
+          },
+          {
+            "text": "26",
+            "html": "<a href=\"#\" onclick=\"clickDay('26');\">26</a>"
+          },
+          {
+            "text": "27",
+            "html": "<a href=\"#\" onclick=\"clickDay('27');\">27</a>"
+          },
+          {
+            "text": "28",
+            "html": "<a href=\"#\" onclick=\"clickDay('28');\">28</a>"
+          },
+          {
+            "text": "29",
+            "html": "<a href=\"#\" onclick=\"clickDay('29');\">29</a>"
+          },
+          {
+            "text": "30",
+            "html": "<a href=\"#\" onclick=\"clickDay('30');\">30</a>"
+          },
+          {
+            "text": "31",
+            "html": "<a href=\"#\" onclick=\"clickDay('31');\">31</a>"
+          }
+        ]
+      ],
+      [
+        [
+          {
+            "text": "屋外スポーツ",
+            "html": "屋外スポーツ"
+          },
+          {
+            "text": "テニス \n野球・ソフトボール \n少年野球 \nサッカー・フットサル \nその他スポーツ",
+            "html": "\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"01\" checked=\"checked\"><span class=\"search-label\">テニス</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"02\"><span class=\"search-label\">野球・ソフトボール</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"03\"><span class=\"search-label\">少年野球</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"04\"><span class=\"search-label\">サッカー・フットサル</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[61][]\" value=\"05\"><span class=\"search-label\">その他スポーツ</span></label>\n\t\t\t\t\t"
+          }
+        ],
+        [
+          {
+            "text": "屋内スポーツ",
+            "html": "屋内スポーツ"
+          },
+          {
+            "text": "体育館・武道館",
+            "html": "\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[62][]\" value=\"06\"><span class=\"search-label\">体育館・武道館</span></label>\n\t\t\t\t\t"
+          }
+        ],
+        [
+          {
+            "text": "文化施設・公民館・市民活動",
+            "html": "文化施設・公民館・市民活動"
+          },
+          {
+            "text": "文化施設 \n公民館 \n市民活動",
+            "html": "\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"07\"><span class=\"search-label\">文化施設</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"08\"><span class=\"search-label\">公民館</span></label>\n\t\t\t\t\t\t\t<label><input type=\"checkbox\" name=\"condition_chk[63][]\" value=\"09\"><span class=\"search-label\">市民活動</span></label>\n\t\t\t\t\t"
+          }
+        ]
+      ]
+    ],
+    "availability_elements": [
+      {
+        "tag": "A",
+        "text": "空き状況の確認",
+        "className": "navigation-link",
+        "href": "#",
+        "html": "<a class=\"navigation-link\" href=\"#\">\n\t\t\t\t\t\t\t\t<span class=\"navigation-link-icon\"><i class=\"fa-regular fa-calendar-days fa-lg\"></i></span>\n\t\t\t\t\t\t\t\t<span class=\"navigation-link-text\">空き状況の確認</span>\n\t\t\t\t\t\t\t</a>"
+      },
+      {
+        "tag": "A",
+        "text": "空き状況の確認",
+        "className": "navigation-link",
+        "href": "#",
+        "html": "<a class=\"navigation-link\" href=\"#\">\n\t\t\t\t\t<span class=\"navigation-link-icon\"><i class=\"fa-regular fa-calendar-days\"></i></span>\n\t\t\t\t\t<span class=\"navigation-link-text\">空き状況の確認</span>\n\t\t\t\t</a>"
+      },
+      {
+        "tag": "A",
+        "text": "施設の空き状況",
+        "className": "tab on",
+        "href": "#",
+        "html": "<a href=\"#\" onclick=\"gotoPage('srch_sst');\" class=\"tab on\">施設の空き状況</a>"
+      },
+      {
+        "tag": "A",
+        "text": "期間の空き状況",
+        "className": "tab off",
+        "href": "#",
+        "html": "<a href=\"#\" onclick=\"gotoPage('srch_stj');\" class=\"tab off\">期間の空き状況</a>"
+      }
+    ]
+  }
 }
