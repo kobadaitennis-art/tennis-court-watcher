@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-11T03:34:15.195104+09:00",
+  "checked_at": "2026-10-11T04:29:38.785732+09:00",
   "mode": "urayasu_production_v2",
   "range": {
     "from": "2026-10-11",
@@ -28,14 +28,13 @@
     }
   ],
   "checked_dates": [
+    "2026-10-11",
     "2026-10-12",
     "2026-10-17",
     "2026-10-18"
   ],
-  "success": false,
-  "errors": [
-    "浦安市 2026-10-11: RuntimeError: 2026-10-11を選択できません"
-  ],
+  "success": true,
+  "errors": [],
   "available_count": 0,
   "new_or_reopened_count": 0,
   "new_or_reopened": [],
