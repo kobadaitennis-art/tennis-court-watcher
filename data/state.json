@@ -289,6 +289,499 @@
       "available": false,
       "notified": true,
       "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|A面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "A面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|A面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "A面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|A面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "A面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|A面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "A面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|A面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "A面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|B面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "B面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|B面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "B面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|B面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "B面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|B面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "B面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|B面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "B面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|C面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "C面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|C面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "C面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|C面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "C面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|C面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "C面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|C面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "C面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|D面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "D面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|D面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "D面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|D面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "D面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|D面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "D面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|D面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "D面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|E面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "E面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|E面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "E面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|E面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "E面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|E面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "E面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|E面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "E面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|F面|09:00-11:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "F面",
+        "start": "09:00",
+        "end": "11:00",
+        "time": "09:00-11:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|F面|11:00-13:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "F面",
+        "start": "11:00",
+        "end": "13:00",
+        "time": "11:00-13:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|F面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "F面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-18|中央公園テニスコート|F面|15:00-17:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "中央公園テニスコート",
+        "court": "F面",
+        "start": "15:00",
+        "end": "17:00",
+        "time": "15:00-17:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
