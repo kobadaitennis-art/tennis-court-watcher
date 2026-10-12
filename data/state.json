@@ -799,6 +799,23 @@
       "available": false,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-10-25|にいじゅくみらい公園|A面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "にいじゅくみらい公園",
+        "court": "A面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
