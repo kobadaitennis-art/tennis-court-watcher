@@ -113,14 +113,16 @@ def parse_urayasu(areas, d):
             # Rows use separate tables and 99px cells for two 49px hour columns.
             # Match actual rendered boundaries; never infer one hour per vacancy cell.
             previous_end = headers[0]['x']
+            closed_suffix = False
             for cell in row['cells']:
                 if abs(cell['x']-previous_end) > 2:
                     raise ValueError('Gap in court row')
                 previous_end = cell['right']
                 if not cell['text']:
-                    if abs(cell['x'] - headers[-1]['x']) > 2:
-                        raise ValueError('Blank status inside operating hours')
+                    closed_suffix = True
                     continue  # trailing padding after last time boundary
+                if closed_suffix:
+                    raise ValueError('Blank status inside operating hours')
                 if cell['text'] not in ('●', '〇', '○', '×', '-', '休館'):
                     raise ValueError(f'Unknown availability symbol: {cell["text"]}')
                 start = min(headers, key=lambda h: abs(h['x']-cell['x']))
@@ -182,8 +184,15 @@ def parse_katsushika(tables, d, facility):
     return slots, courts
 
 
+async def click_k_locator(page, locator):
+    # These public Katsushika links submit a form after a loading-screen transition.
+    # Wait for the new document, not an element still present in the old document.
+    async with page.expect_navigation(wait_until='domcontentloaded', timeout=45000):
+        await locator.click(timeout=20000)
+
+
 async def click_link(page, name):
-    await page.get_by_role('link', name=name, exact=True).click(timeout=20000)
+    await click_k_locator(page, page.get_by_role('link', name=name, exact=True))
 
 
 async def wait_k(page, text):
@@ -236,11 +245,12 @@ async def open_katsushika(page):
 async def month_view(page, facility, y, m):
     await page.locator('#selectBldCd').select_option(label=facility)
     # The monthly facility selector requires an explicit redisplay link.
-    await page.locator('a[href*="gRsvWTransInstSrchInstAction"]').click()
+    await click_k_locator(page, page.locator('a[href*="gRsvWTransInstSrchInstAction"]'))
+    await page.locator('table.m_akitablelist').wait_for(timeout=30000)
     await page.get_by_role('link', name=facility, exact=True).wait_for(timeout=30000)
     await page.get_by_role('link', name='次の月', exact=True).wait_for(timeout=30000)
     for _ in range(3):
-        text = await page.locator('body').inner_text()
+        text = await page.locator('table.m_akitablelist').inner_text()
         if f'{y}年{m}月' in text:
             return
         match = re.search(r'(\d{4})年(\d{1,2})月', text)
@@ -249,7 +259,7 @@ async def month_view(page, facility, y, m):
         current = (int(match[1]), int(match[2]))
         await click_link(page, '次の月' if current < (y,m) else '前の月')
         await page.get_by_role('link', name='次の月', exact=True).wait_for(timeout=30000)
-        await page.wait_for_function('(s)=>document.body.innerText.includes(s)', arg=f'{y}年{m}月', timeout=30000)
+        await page.wait_for_function('(s)=>document.querySelector("table.m_akitablelist")?.innerText.includes(s)', arg=f'{y}年{m}月', timeout=30000)
     raise ValueError('Cannot select target month')
 
 
@@ -293,7 +303,7 @@ async def check_katsushika(browser, dates):
                         if status['status'] in ('全て空き','一部空き'):
                             # Locator comes from observed calendar href, not a generated action.
                             link = page.locator('a[href='+json.dumps(status['href'])+']')
-                            await link.click()
+                            await click_k_locator(page, link)
                             await page.locator('table.akitablelist').wait_for(timeout=30000)
                             await page.get_by_role('link', name=facility, exact=True).wait_for(timeout=30000)
                             selected = await page.locator('#selectBldCd option:checked').inner_text()
@@ -384,6 +394,9 @@ async def main():
                 errors.append('葛飾区は公開システム稼働時間外（7時〜24時）。状態は保持。')
         finally:
             await browser.close()
+    expected=sum(len(ds)*8 for ds in dates.values())
+    if len(coverage)!=expected and not errors:
+        errors.append(f'Incomplete coverage: {len(coverage)}/{expected} facility/date scopes')
     # Never notify a same-day session which has already started.
     slots=[s for s in slots if datetime.fromisoformat(s['date']+'T'+s['start']).replace(tzinfo=JST)>now]
     new=update_state(state,slots,coverage)
