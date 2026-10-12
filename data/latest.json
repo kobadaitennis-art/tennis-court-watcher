@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-12T22:13:05.575349+09:00",
+  "checked_at": "2026-10-12T22:44:32.179789+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -836,7 +836,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 6,
+  "available_count": 5,
   "current": [
     {
       "date": "2026-10-18",
@@ -872,18 +872,6 @@
       "start": "17:00",
       "end": "19:00",
       "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-18",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "E面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     },
     {
