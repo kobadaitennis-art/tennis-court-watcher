@@ -69,7 +69,7 @@ jobs:
               print("Notification text missing.")
               raise SystemExit(1)
 
-          title = f"🎾 浦安市テニス新規空き {len(slots)}件"
+          title = f"🎾 テニスコート新規空き {len(slots)}件"
 
           subprocess.run(
               [
@@ -77,6 +77,7 @@ jobs:
                   "--repo", os.environ["GH_REPO"],
                   "--title", title,
                   "--body", message,
+                  "--assignee", "kobadaitennis-art",
               ],
               check=True,
           )
