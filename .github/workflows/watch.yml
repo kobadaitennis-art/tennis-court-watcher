@@ -1,8 +1,12 @@
-
 name: Tennis court watcher
 
 on:
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Read-only validation (no notification or state update)"
+        type: boolean
+        default: false
   schedule:
     - cron: "2,17,32,47 * * * *"
 
@@ -18,18 +22,26 @@ jobs:
   watch:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: Install Python packages
         run: pip install -r requirements.txt
+
+      - name: Test parsing and notification state
+        run: python -m unittest discover -s tests -v
 
       - name: Install Chromium
         run: python -m playwright install --with-deps chromium
@@ -37,64 +49,47 @@ jobs:
       - name: Check tennis courts
         run: python watcher.py
 
-      - name: Create notification issue
-        if: success()
+      - name: Create vacancy notification and acknowledge state
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
-        run: |
-          python - <<'PY'
-          import json
-          import os
-          import subprocess
-          from pathlib import Path
-
-          data = json.loads(
-              Path("data/latest.json").read_text(encoding="utf-8")
-          )
-
-          if not data.get("success", False):
-              print("Check incomplete; no vacancy notification.")
-              raise SystemExit(0)
-
-          slots = data.get("new_or_reopened", [])
-
-          if not slots:
-              print("No new vacancies; no issue created.")
-              raise SystemExit(0)
-
-          message = data.get("notification", "").strip()
-
-          if not message:
-              print("Notification text missing.")
-              raise SystemExit(1)
-
-          title = f"🎾 テニスコート新規空き {len(slots)}件"
-
-          subprocess.run(
-              [
-                  "gh", "issue", "create",
-                  "--repo", os.environ["GH_REPO"],
-                  "--title", title,
-                  "--body", message,
-                  "--assignee", "kobadaitennis-art",
-              ],
-              check=True,
-          )
-          PY
+        run: python notify.py
 
       - name: Save latest state
-        if: success()
+        if: success() && env.DRY_RUN != 'true'
         run: |
           git config user.name "tennis-court-watcher"
           git config user.email "actions@users.noreply.github.com"
           git add data/state.json data/latest.json
           git diff --cached --quiet || git commit -m "Update court availability state"
+          git pull --rebase origin main
           git push
+
+      - name: Publish coverage summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          p = Path("data/latest.json")
+          if p.exists():
+              data = json.loads(p.read_text(encoding="utf-8"))
+              with open(os.environ["GITHUB_STEP_SUMMARY"], "a", encoding="utf-8") as out:
+                  out.write(f"## Checked at {data.get('checked_at')}\n")
+                  out.write(f"Confirmed facility/date scopes: {len(data.get('coverage', []))}\n\n")
+                  out.write(f"Available: {data.get('available_count')} / new: {data.get('new_or_reopened_count')}\n\n")
+                  for error in data.get("errors", []):
+                      out.write(f"- Incomplete: {error}\n")
+          PY
 
       - name: Upload latest result
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: latest-check
-          path: data/latest.json
+          path: |
+            data/latest.json
+            data/pending-state.json
+          retention-days: 7
