@@ -1,3 +1,4 @@
+
 name: Tennis court watcher
 
 on:
@@ -7,11 +8,16 @@ on:
 
 permissions:
   contents: write
+  issues: write
+
+concurrency:
+  group: tennis-court-watcher
+  cancel-in-progress: false
 
 jobs:
   watch:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
 
     steps:
       - name: Checkout
@@ -31,7 +37,53 @@ jobs:
       - name: Check tennis courts
         run: python watcher.py
 
+      - name: Create notification issue
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          data = json.loads(
+              Path("data/latest.json").read_text(encoding="utf-8")
+          )
+
+          if not data.get("success", False):
+              print("Check incomplete; no vacancy notification.")
+              raise SystemExit(0)
+
+          slots = data.get("new_or_reopened", [])
+
+          if not slots:
+              print("No new vacancies; no issue created.")
+              raise SystemExit(0)
+
+          message = data.get("notification", "").strip()
+
+          if not message:
+              print("Notification text missing.")
+              raise SystemExit(1)
+
+          title = f"🎾 浦安市テニス新規空き {len(slots)}件"
+
+          subprocess.run(
+              [
+                  "gh", "issue", "create",
+                  "--repo", os.environ["GH_REPO"],
+                  "--title", title,
+                  "--body", message,
+              ],
+              check=True,
+          )
+          PY
+
       - name: Save latest state
+        if: success()
         run: |
           git config user.name "tennis-court-watcher"
           git config user.email "actions@users.noreply.github.com"
@@ -40,6 +92,7 @@ jobs:
           git push
 
       - name: Upload latest result
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: latest-check
