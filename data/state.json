@@ -269,9 +269,9 @@
         "time": "19:00-21:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-31|にいじゅくみらい公園|A面|10:00-12:00": {
       "slot": {
