@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-13T09:56:51.070740+09:00",
+  "checked_at": "2026-10-13T10:16:46.955983+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.akitablelist\") to be visible\n"
   ],
   "target_dates": {
     "urayasu": [
@@ -581,8 +581,12 @@
       "city": "katsushika",
       "date": "2026-10-24",
       "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
+      "courts": [
+        "A面",
+        "B面",
+        "C面"
+      ],
+      "monthly_status": "一部空き"
     },
     {
       "city": "katsushika",
@@ -690,7 +694,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 4,
+  "available_count": 5,
   "current": [
     {
       "date": "2026-10-18",
@@ -739,22 +743,34 @@
       "end": "18:00",
       "time": "16:00-18:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
+    {
+      "date": "2026-10-24",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "にいじゅくみらい公園",
+      "court": "A面",
+      "start": "08:00",
+      "end": "10:00",
+      "time": "08:00-10:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened": [
     {
-      "date": "2026-11-08",
-      "weekday": "日",
+      "date": "2026-10-24",
+      "weekday": "土",
       "holiday": null,
       "municipality": "葛飾区",
-      "facility": "奥戸総スポテニス・野球場",
+      "facility": "にいじゅくみらい公園",
       "court": "A面",
-      "start": "18:30",
-      "end": "20:30",
-      "time": "18:30-20:30",
+      "start": "08:00",
+      "end": "10:00",
+      "time": "08:00-10:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened_count": 1,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-11-08（日） | 葛飾区 | 奥戸総スポテニス・野球場 | A面 | 18:30-20:30 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 葛飾区 | にいじゅくみらい公園 | A面 | 08:00-10:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
