@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-14T07:41:31.003316+09:00",
+  "checked_at": "2026-10-14T08:06:02.658466+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 水元総スポテニス 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -291,41 +293,6 @@
     {
       "city": "katsushika",
       "date": "2026-10-31",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
       "facility": "水元総スポテニス",
       "courts": [],
       "monthly_status": "予約あり"
