@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-14T07:07:02.505317+09:00",
+  "checked_at": "2026-10-14T07:41:31.003316+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 東金町テニスコート 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -329,6 +327,41 @@
       "city": "katsushika",
       "date": "2026-11-14",
       "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-17",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-18",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "東金町テニスコート",
       "courts": [],
       "monthly_status": "予約あり"
     },
