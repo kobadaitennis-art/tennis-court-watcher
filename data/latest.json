@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-13T10:38:13.630101+09:00",
+  "checked_at": "2026-10-13T10:58:14.176605+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 にいじゅくみらい公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -606,34 +608,6 @@
     {
       "city": "katsushika",
       "date": "2026-10-31",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
       "facility": "にいじゅくみらい公園",
       "courts": [],
       "monthly_status": "予約あり"
