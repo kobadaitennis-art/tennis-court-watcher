@@ -915,6 +915,23 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
+      "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|水元総スポテニス|B面|19:00-21:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "水元総スポテニス",
+        "court": "B面",
+        "start": "19:00",
+        "end": "21:00",
+        "time": "19:00-21:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
       "available": true,
       "notified": true,
       "generation": 1
