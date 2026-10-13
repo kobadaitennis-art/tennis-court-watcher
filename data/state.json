@@ -816,6 +816,40 @@
       "available": false,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-10-18|上千葉公園運動場|B面|16:00-18:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "上千葉公園運動場",
+        "court": "B面",
+        "start": "16:00",
+        "end": "18:00",
+        "time": "16:00-18:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|上千葉公園運動場|A面|16:00-18:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "上千葉公園運動場",
+        "court": "A面",
+        "start": "16:00",
+        "end": "18:00",
+        "time": "16:00-18:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
