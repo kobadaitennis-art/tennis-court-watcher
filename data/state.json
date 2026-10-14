@@ -1156,6 +1156,40 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-11-03|小菅東スポーツ公園|B面|12:00-14:00": {
+      "slot": {
+        "date": "2026-11-03",
+        "weekday": "火",
+        "holiday": "文化の日",
+        "municipality": "葛飾区",
+        "facility": "小菅東スポーツ公園",
+        "court": "B面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-11-15|上千葉公園運動場|C面|18:30-20:30": {
+      "slot": {
+        "date": "2026-11-15",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "上千葉公園運動場",
+        "court": "C面",
+        "start": "18:30",
+        "end": "20:30",
+        "time": "18:30-20:30",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
