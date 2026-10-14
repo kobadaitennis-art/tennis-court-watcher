@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-14T17:24:48.139418+09:00",
+  "checked_at": "2026-10-14T18:03:13.090523+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "葛飾区 東金町テニスコート 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 奥戸総スポテニス・野球場 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -229,41 +229,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "水元総スポテニス",
       "courts": [],
@@ -391,6 +356,13 @@
     {
       "city": "katsushika",
       "date": "2026-11-08",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
       "facility": "東金町テニスコート",
       "courts": [],
       "monthly_status": "予約あり"
