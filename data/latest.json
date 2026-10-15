@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-15T12:09:59.112396+09:00",
+  "checked_at": "2026-10-15T12:42:50.776780+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 上千葉公園運動場 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -615,6 +613,52 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "上千葉公園運動場",
+      "courts": [
+        "A面",
+        "B面",
+        "C面"
+      ],
+      "monthly_status": "一部空き"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "にいじゅくみらい公園",
       "courts": [],
@@ -768,8 +812,21 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 0,
-  "current": [],
+  "available_count": 1,
+  "current": [
+    {
+      "date": "2026-11-15",
+      "weekday": "日",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "C面",
+      "start": "18:30",
+      "end": "20:30",
+      "time": "18:30-20:30",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    }
+  ],
   "new_or_reopened": [],
   "new_or_reopened_count": 0,
   "notification": ""
