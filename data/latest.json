@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-15T10:07:37.837844+09:00",
+  "checked_at": "2026-10-15T10:41:17.764369+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 にいじゅくみらい公園 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -498,15 +496,8 @@
       "city": "katsushika",
       "date": "2026-11-15",
       "facility": "渋江公園",
-      "courts": [
-        "A面",
-        "B面",
-        "C面",
-        "D面",
-        "E面",
-        "F面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -668,6 +659,41 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-17",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-18",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "にいじゅくみらい公園",
       "courts": [],
@@ -786,20 +812,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 2,
+  "available_count": 1,
   "current": [
-    {
-      "date": "2026-11-15",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "渋江公園",
-      "court": "D面",
-      "start": "18:30",
-      "end": "20:30",
-      "time": "18:30-20:30",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
     {
       "date": "2026-11-15",
       "weekday": "日",
