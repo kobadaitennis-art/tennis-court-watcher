@@ -1394,6 +1394,465 @@
       "available": false,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-10-25|奥戸総スポテニス・野球場|C面|16:00-18:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "C面",
+        "start": "16:00",
+        "end": "18:00",
+        "time": "16:00-18:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|A面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|A面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|A面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|A面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|B面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "B面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|B面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "B面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|B面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "B面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|C面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "C面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|C面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "C面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|C面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "C面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|C面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "C面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|D面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "D面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|D面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "D面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|D面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "D面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|D面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "D面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|E面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "E面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|E面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "E面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|E面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "E面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|F面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "F面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|F面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "F面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-18|東金町テニスコート|F面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-18",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "F面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|A面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|A面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "A面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|B面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "B面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|B面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "B面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|C面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "C面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
