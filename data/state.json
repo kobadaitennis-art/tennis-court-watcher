@@ -1918,7 +1918,7 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -1952,7 +1952,7 @@
         "time": "11:00-13:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     }
