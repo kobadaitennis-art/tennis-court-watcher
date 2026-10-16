@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-16T16:31:24.031271+09:00",
+  "checked_at": "2026-10-16T17:07:40.564506+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 にいじゅくみらい公園 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-17",
@@ -664,6 +662,41 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-17",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-18",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "にいじゅくみらい公園",
       "courts": [],
@@ -782,7 +815,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 17,
+  "available_count": 16,
   "current": [
     {
       "date": "2026-10-18",
@@ -806,18 +839,6 @@
       "start": "10:00",
       "end": "12:00",
       "time": "10:00-12:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-18",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "東金町テニスコート",
-      "court": "A面",
-      "start": "12:00",
-      "end": "14:00",
-      "time": "12:00-14:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     },
     {
