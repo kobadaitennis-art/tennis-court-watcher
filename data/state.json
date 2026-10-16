@@ -1221,7 +1221,7 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -1306,9 +1306,9 @@
         "time": "17:00-19:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-11-03|上千葉公園運動場|C面|16:00-18:00": {
       "slot": {
@@ -1646,7 +1646,7 @@
         "time": "12:00-14:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -1935,7 +1935,7 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -1985,6 +1985,23 @@
         "end": "12:00",
         "time": "10:00-12:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-17|運動公園テニスコート|F面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-17",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "運動公園テニスコート",
+        "court": "F面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
       "available": true,
       "notified": true,
