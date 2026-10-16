@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-16T17:07:40.564506+09:00",
+  "checked_at": "2026-10-16T17:45:16.748299+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -818,11 +818,11 @@
   "available_count": 16,
   "current": [
     {
-      "date": "2026-10-18",
-      "weekday": "日",
+      "date": "2026-10-17",
+      "weekday": "土",
       "holiday": null,
       "municipality": "浦安市",
-      "facility": "高洲中央公園テニスコート",
+      "facility": "中央公園テニスコート",
       "court": "B面",
       "start": "19:00",
       "end": "21:00",
@@ -1010,7 +1010,20 @@
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [],
-  "new_or_reopened_count": 0,
-  "notification": ""
+  "new_or_reopened": [
+    {
+      "date": "2026-10-17",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "浦安市",
+      "facility": "中央公園テニスコート",
+      "court": "B面",
+      "start": "19:00",
+      "end": "21:00",
+      "time": "19:00-21:00",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+    }
+  ],
+  "new_or_reopened_count": 1,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-17（土） | 浦安市 | 中央公園テニスコート | B面 | 19:00-21:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
