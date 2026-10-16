@@ -2074,6 +2074,23 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-11-15|奥戸総スポテニス・野球場|A面|16:00-18:00": {
+      "slot": {
+        "date": "2026-11-15",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "A面",
+        "start": "16:00",
+        "end": "18:00",
+        "time": "16:00-18:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
