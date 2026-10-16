@@ -2088,6 +2088,23 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
+      "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|小菅東スポーツ公園|C面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "小菅東スポーツ公園",
+        "court": "C面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
       "available": true,
       "notified": true,
       "generation": 1
