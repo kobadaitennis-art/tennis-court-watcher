@@ -626,9 +626,9 @@
         "time": "17:00-19:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-18|中央公園テニスコート|E面|09:00-11:00": {
       "slot": {
@@ -2190,7 +2190,7 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -2258,7 +2258,7 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     }
