@@ -1,10 +1,9 @@
 {
-  "checked_at": "2026-10-17T21:45:44.491146+09:00",
+  "checked_at": "2026-10-17T22:16:13.933718+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "葛飾区 上千葉公園運動場 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================",
-    "葛飾区 にいじゅくみらい公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 東金町テニスコート 2026-11: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.m_akitablelist\") to be visible\n"
   ],
   "target_dates": {
     "urayasu": [
@@ -477,48 +476,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "東金町テニスコート",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "渋江公園",
       "courts": [],
@@ -708,6 +665,48 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "にいじゅくみらい公園",
       "courts": [],
@@ -737,6 +736,48 @@
     {
       "city": "katsushika",
       "date": "2026-10-31",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "にいじゅくみらい公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
       "facility": "にいじゅくみらい公園",
       "courts": [],
       "monthly_status": "予約あり"
@@ -819,20 +860,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 6,
+  "available_count": 4,
   "current": [
-    {
-      "date": "2026-10-18",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "D面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
     {
       "date": "2026-10-18",
       "weekday": "日",
@@ -843,18 +872,6 @@
       "start": "12:00",
       "end": "14:00",
       "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-18",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "東金町テニスコート",
-      "court": "C面",
-      "start": "14:00",
-      "end": "16:00",
-      "time": "14:00-16:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     },
     {
