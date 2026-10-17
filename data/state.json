@@ -473,7 +473,7 @@
         "time": "09:00-11:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -660,7 +660,7 @@
         "time": "11:00-13:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -2258,9 +2258,9 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-31|渋江公園|A面|18:30-20:30": {
       "slot": {
@@ -2276,6 +2276,40 @@
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
       "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-11-03|渋江公園|C面|16:00-18:00": {
+      "slot": {
+        "date": "2026-11-03",
+        "weekday": "火",
+        "holiday": "文化の日",
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "C面",
+        "start": "16:00",
+        "end": "18:00",
+        "time": "16:00-18:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|上千葉公園運動場|B面|18:30-20:30": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "上千葉公園運動場",
+        "court": "B面",
+        "start": "18:30",
+        "end": "20:30",
+        "time": "18:30-20:30",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
       "notified": true,
       "generation": 1
     }
