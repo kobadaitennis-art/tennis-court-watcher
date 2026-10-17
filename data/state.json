@@ -524,9 +524,9 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-18|中央公園テニスコート|C面|17:00-19:00": {
       "slot": {
@@ -609,9 +609,9 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-18|中央公園テニスコート|D面|17:00-19:00": {
       "slot": {
@@ -2223,6 +2223,23 @@
         "end": "17:00",
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-11-14|水元総スポテニス|B面|17:00-19:00": {
+      "slot": {
+        "date": "2026-11-14",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "水元総スポテニス",
+        "court": "B面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
       "available": true,
       "notified": true,
