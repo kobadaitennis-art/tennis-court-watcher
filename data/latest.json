@@ -1,10 +1,9 @@
 {
-  "checked_at": "2026-10-17T13:09:31.903342+09:00",
+  "checked_at": "2026-10-17T13:41:16.034962+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "葛飾区 奥戸総スポテニス・野球場 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================",
-    "葛飾区 小菅東スポーツ公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 にいじゅくみらい公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -316,6 +315,48 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "水元総スポテニス",
       "courts": [],
@@ -589,6 +630,48 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "上千葉公園運動場",
       "courts": [],
@@ -705,48 +788,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-10-17",
       "facility": "東新小岩野球・テニス・会議室",
       "courts": [],
@@ -823,20 +864,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 11,
+  "available_count": 10,
   "current": [
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "B面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
     {
       "date": "2026-10-24",
       "weekday": "土",
