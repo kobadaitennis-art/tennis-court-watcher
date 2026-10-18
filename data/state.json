@@ -1408,9 +1408,9 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-18|東金町テニスコート|A面|08:00-10:00": {
       "slot": {
@@ -1833,9 +1833,9 @@
         "time": "14:00-16:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-25|東金町テニスコート|C面|14:00-16:00": {
       "slot": {
