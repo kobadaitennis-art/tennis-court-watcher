@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-18T15:04:56.048881+09:00",
+  "checked_at": "2026-10-18T15:47:58.420007+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 東新小岩野球・テニス・会議室 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-18",
@@ -799,51 +801,9 @@
       "facility": "東新小岩野球・テニス・会議室",
       "courts": [],
       "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
     }
   ],
-  "available_count": 8,
+  "available_count": 7,
   "current": [
     {
       "date": "2026-10-25",
@@ -912,18 +872,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "G面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "D面",
       "start": "19:00",
       "end": "21:00",
       "time": "19:00-21:00",
