@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-18T20:42:42.075059+09:00",
+  "checked_at": "2026-10-18T21:02:17.143077+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-18",
@@ -642,20 +644,6 @@
     {
       "city": "katsushika",
       "date": "2026-10-24",
-      "facility": "上千葉公園運動場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-25",
-      "facility": "上千葉公園運動場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
       "facility": "上千葉公園運動場",
       "courts": [],
       "monthly_status": "予約あり"
