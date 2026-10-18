@@ -2530,9 +2530,9 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-25|奥戸総スポテニス・野球場|B面|16:00-18:00": {
       "slot": {
