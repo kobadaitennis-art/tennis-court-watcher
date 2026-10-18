@@ -2462,7 +2462,7 @@
         "time": "19:00-21:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -2530,7 +2530,7 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -2565,6 +2565,23 @@
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
       "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-25|東金町テニスコート|E面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "東金町テニスコート",
+        "court": "E面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
       "notified": true,
       "generation": 1
     }
