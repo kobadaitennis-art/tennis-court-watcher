@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-18T13:41:39.344645+09:00",
+  "checked_at": "2026-10-18T14:08:20.443382+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -650,12 +650,8 @@
       "city": "katsushika",
       "date": "2026-10-25",
       "facility": "上千葉公園運動場",
-      "courts": [
-        "A面",
-        "B面",
-        "C面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -847,7 +843,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 10,
+  "available_count": 9,
   "current": [
     {
       "date": "2026-10-25",
@@ -956,34 +952,9 @@
       "end": "21:00",
       "time": "19:00-21:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "上千葉公園運動場",
-      "court": "B面",
-      "start": "16:00",
-      "end": "18:00",
-      "time": "16:00-18:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "上千葉公園運動場",
-      "court": "B面",
-      "start": "16:00",
-      "end": "18:00",
-      "time": "16:00-18:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
-  "new_or_reopened_count": 1,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-25（日） | 葛飾区 | 上千葉公園運動場 | B面 | 16:00-18:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened": [],
+  "new_or_reopened_count": 0,
+  "notification": ""
 }
