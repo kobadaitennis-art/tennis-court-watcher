@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-18T10:08:35.249069+09:00",
+  "checked_at": "2026-10-18T10:39:35.554362+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -843,21 +843,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 1,
-  "current": [
-    {
-      "date": "2026-10-18",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "東金町テニスコート",
-      "court": "E面",
-      "start": "12:00",
-      "end": "14:00",
-      "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
+  "available_count": 0,
+  "current": [],
   "new_or_reopened": [],
   "new_or_reopened_count": 0,
   "notification": ""
