@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-19T20:12:36.638407+09:00",
+  "checked_at": "2026-10-19T20:44:03.281545+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -508,6 +506,27 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "上千葉公園運動場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "上千葉公園運動場",
       "courts": [],
@@ -675,7 +694,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 3,
+  "available_count": 2,
   "current": [
     {
       "date": "2026-10-25",
@@ -684,18 +703,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "B面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "E面",
       "start": "19:00",
       "end": "21:00",
       "time": "19:00-21:00",
