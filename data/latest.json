@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-19T14:25:32.297053+09:00",
+  "checked_at": "2026-10-19T15:00:10.566570+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 小菅東スポーツ公園 2026-11: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.m_akitablelist\") to be visible\n"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -464,48 +466,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-10-24",
       "facility": "上千葉公園運動場",
       "courts": [],
@@ -694,8 +654,20 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 7,
+  "available_count": 8,
   "current": [
+    {
+      "date": "2026-10-24",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "浦安市",
+      "facility": "中央公園テニスコート",
+      "court": "D面",
+      "start": "19:00",
+      "end": "21:00",
+      "time": "19:00-21:00",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+    },
     {
       "date": "2026-10-25",
       "weekday": "日",
@@ -781,7 +753,20 @@
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     }
   ],
-  "new_or_reopened": [],
-  "new_or_reopened_count": 0,
-  "notification": ""
+  "new_or_reopened": [
+    {
+      "date": "2026-10-24",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "浦安市",
+      "facility": "中央公園テニスコート",
+      "court": "D面",
+      "start": "19:00",
+      "end": "21:00",
+      "time": "19:00-21:00",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+    }
+  ],
+  "new_or_reopened_count": 1,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 浦安市 | 中央公園テニスコート | D面 | 19:00-21:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
