@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-20T07:10:38.039284+09:00",
+  "checked_at": "2026-10-20T07:40:44.614342+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 小菅東スポーツ公園 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -443,27 +445,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-10-24",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-25",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "小菅東スポーツ公園",
       "courts": [],
@@ -694,21 +675,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 1,
-  "current": [
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "F面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    }
-  ],
+  "available_count": 0,
+  "current": [],
   "new_or_reopened": [],
   "new_or_reopened_count": 0,
   "notification": ""
