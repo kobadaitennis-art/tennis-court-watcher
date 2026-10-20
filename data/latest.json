@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T07:40:55.091541+09:00",
+  "checked_at": "2026-10-21T08:07:49.234888+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -789,32 +789,7 @@
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "東金町テニスコート",
-      "court": "D面",
-      "start": "12:00",
-      "end": "14:00",
-      "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-11-21",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "上千葉公園運動場",
-      "court": "C面",
-      "start": "18:30",
-      "end": "20:30",
-      "time": "18:30-20:30",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
-  "new_or_reopened_count": 2,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-25（日） | 葛飾区 | 東金町テニスコート | D面 | 12:00-14:00 |\n| 2026-11-21（土） | 葛飾区 | 上千葉公園運動場 | C面 | 18:30-20:30 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened": [],
+  "new_or_reopened_count": 0,
+  "notification": ""
 }
