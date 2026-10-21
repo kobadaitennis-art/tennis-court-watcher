@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T22:37:25.992681+09:00",
+  "checked_at": "2026-10-21T23:18:31.155749+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -755,7 +755,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 4,
+  "available_count": 3,
   "current": [
     {
       "date": "2026-10-24",
@@ -767,18 +767,6 @@
       "start": "12:00",
       "end": "14:00",
       "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "奥戸総スポテニス・野球場",
-      "court": "B面",
-      "start": "08:00",
-      "end": "10:00",
-      "time": "08:00-10:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     },
     {
