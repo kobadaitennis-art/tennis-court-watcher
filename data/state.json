@@ -3040,9 +3040,9 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|F面|17:00-19:00": {
       "slot": {
@@ -3363,7 +3363,7 @@
         "time": "12:00-14:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -3398,6 +3398,414 @@
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
       "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|A面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "A面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|A面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "A面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|A面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "A面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|A面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "A面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|B面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "B面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|B面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "B面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|B面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "B面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|B面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "B面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|C面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "C面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|C面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "C面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|奥戸総スポテニス・野球場|C面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "C面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-11-14|奥戸総スポテニス・野球場|B面|18:30-20:30": {
+      "slot": {
+        "date": "2026-11-14",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "奥戸総スポテニス・野球場",
+        "court": "B面",
+        "start": "18:30",
+        "end": "20:30",
+        "time": "18:30-20:30",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|A面|08:00-10:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "A面",
+        "start": "08:00",
+        "end": "10:00",
+        "time": "08:00-10:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|A面|10:00-12:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "A面",
+        "start": "10:00",
+        "end": "12:00",
+        "time": "10:00-12:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|A面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "A面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|B面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "B面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|B面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "B面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|C面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "C面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|C面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "C面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|D面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "D面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|D面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "D面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|E面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "E面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|E面|14:00-16:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "E面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-24|渋江公園|F面|12:00-14:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "渋江公園",
+        "court": "F面",
+        "start": "12:00",
+        "end": "14:00",
+        "time": "12:00-14:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
       "notified": true,
       "generation": 1
     }
