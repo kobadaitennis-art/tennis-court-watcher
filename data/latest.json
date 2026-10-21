@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-21T17:07:47.779982+09:00",
+  "checked_at": "2026-10-21T17:47:36.186651+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -762,7 +762,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 8,
+  "available_count": 7,
   "current": [
     {
       "date": "2026-10-24",
@@ -846,18 +846,6 @@
       "start": "12:00",
       "end": "14:00",
       "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "渋江公園",
-      "court": "E面",
-      "start": "14:00",
-      "end": "16:00",
-      "time": "14:00-16:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
