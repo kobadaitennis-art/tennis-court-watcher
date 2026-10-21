@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-21T17:47:36.186651+09:00",
+  "checked_at": "2026-10-21T18:19:45.775876+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 小菅東スポーツ公園 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -483,27 +485,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-10-24",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-25",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "小菅東スポーツ公園",
       "courts": [],
@@ -762,7 +743,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 7,
+  "available_count": 6,
   "current": [
     {
       "date": "2026-10-24",
@@ -822,18 +803,6 @@
       "start": "14:00",
       "end": "16:00",
       "time": "14:00-16:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "奥戸総スポテニス・野球場",
-      "court": "C面",
-      "start": "10:00",
-      "end": "12:00",
-      "time": "10:00-12:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     },
     {
