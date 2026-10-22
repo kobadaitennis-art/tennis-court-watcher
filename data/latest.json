@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-22T22:40:36.172631+09:00",
+  "checked_at": "2026-10-22T23:18:03.044943+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -444,8 +444,15 @@
       "city": "katsushika",
       "date": "2026-10-31",
       "facility": "渋江公園",
-      "courts": [],
-      "monthly_status": "予約あり"
+      "courts": [
+        "A面",
+        "B面",
+        "C面",
+        "D面",
+        "E面",
+        "F面"
+      ],
+      "monthly_status": "一部空き"
     },
     {
       "city": "katsushika",
@@ -818,18 +825,6 @@
       "date": "2026-10-24",
       "weekday": "土",
       "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "D面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
       "municipality": "葛飾区",
       "facility": "奥戸総スポテニス・野球場",
       "court": "A面",
@@ -837,22 +832,34 @@
       "end": "14:00",
       "time": "12:00-14:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
+    {
+      "date": "2026-10-31",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "渋江公園",
+      "court": "B面",
+      "start": "16:00",
+      "end": "18:00",
+      "time": "16:00-18:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened": [
     {
-      "date": "2026-10-24",
+      "date": "2026-10-31",
       "weekday": "土",
       "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "D面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      "municipality": "葛飾区",
+      "facility": "渋江公園",
+      "court": "B面",
+      "start": "16:00",
+      "end": "18:00",
+      "time": "16:00-18:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened_count": 1,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 浦安市 | 中央公園テニスコート | D面 | 17:00-19:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-31（土） | 葛飾区 | 渋江公園 | B面 | 16:00-18:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
