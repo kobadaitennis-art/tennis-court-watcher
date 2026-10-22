@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-22T12:45:43.549286+09:00",
+  "checked_at": "2026-10-22T13:17:38.199286+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -360,15 +360,8 @@
       "city": "katsushika",
       "date": "2026-10-25",
       "facility": "東金町テニスコート",
-      "courts": [
-        "A面",
-        "B面",
-        "C面",
-        "D面",
-        "E面",
-        "F面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -819,7 +812,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 3,
+  "available_count": 2,
   "current": [
     {
       "date": "2026-10-24",
@@ -843,18 +836,6 @@
       "start": "12:00",
       "end": "14:00",
       "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "東金町テニスコート",
-      "court": "B面",
-      "start": "14:00",
-      "end": "16:00",
-      "time": "14:00-16:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
