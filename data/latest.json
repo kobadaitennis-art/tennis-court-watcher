@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-22T14:41:22.555126+09:00",
+  "checked_at": "2026-10-22T15:13:33.158691+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -339,11 +339,8 @@
       "city": "katsushika",
       "date": "2026-11-21",
       "facility": "水元総スポテニス",
-      "courts": [
-        "A面",
-        "B面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -815,7 +812,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 3,
+  "available_count": 2,
   "current": [
     {
       "date": "2026-10-24",
@@ -839,18 +836,6 @@
       "start": "12:00",
       "end": "14:00",
       "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-11-21",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "水元総スポテニス",
-      "court": "B面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
