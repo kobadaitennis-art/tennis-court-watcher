@@ -3910,6 +3910,23 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "浦安市|2026-10-24|美浜テニスコート|B面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "美浜テニスコート",
+        "court": "B面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }

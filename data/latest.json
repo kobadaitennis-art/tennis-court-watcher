@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-23T07:22:26.901134+09:00",
+  "checked_at": "2026-10-23T07:45:34.924938+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -869,8 +869,20 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 2,
+  "available_count": 3,
   "current": [
+    {
+      "date": "2026-10-24",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "浦安市",
+      "facility": "美浜テニスコート",
+      "court": "B面",
+      "start": "13:00",
+      "end": "15:00",
+      "time": "13:00-15:00",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+    },
     {
       "date": "2026-10-25",
       "weekday": "日",
@@ -896,7 +908,20 @@
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [],
-  "new_or_reopened_count": 0,
-  "notification": ""
+  "new_or_reopened": [
+    {
+      "date": "2026-10-24",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "浦安市",
+      "facility": "美浜テニスコート",
+      "court": "B面",
+      "start": "13:00",
+      "end": "15:00",
+      "time": "13:00-15:00",
+      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+    }
+  ],
+  "new_or_reopened_count": 1,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 浦安市 | 美浜テニスコート | B面 | 13:00-15:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
