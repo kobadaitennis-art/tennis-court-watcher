@@ -1,10 +1,8 @@
 {
-  "checked_at": "2026-10-23T22:50:10.679287+09:00",
+  "checked_at": "2026-10-23T23:40:31.503062+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.akitablelist\") to be visible\n"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -634,6 +632,17 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "上千葉公園運動場",
+      "courts": [
+        "A面",
+        "B面",
+        "C面"
+      ],
+      "monthly_status": "一部空き"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "上千葉公園運動場",
       "courts": [],
@@ -864,7 +873,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 10,
+  "available_count": 9,
   "current": [
     {
       "date": "2026-10-24",
@@ -876,18 +885,6 @@
       "start": "17:00",
       "end": "19:00",
       "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "B面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     },
     {
@@ -966,18 +963,6 @@
       "date": "2026-10-24",
       "weekday": "土",
       "holiday": null,
-      "municipality": "浦安市",
-      "facility": "舞浜テニスコート",
-      "court": "A面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
       "municipality": "葛飾区",
       "facility": "奥戸総スポテニス・野球場",
       "court": "A面",
@@ -985,46 +970,34 @@
       "end": "14:00",
       "time": "12:00-14:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
+    {
+      "date": "2026-10-31",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "C面",
+      "start": "14:00",
+      "end": "16:00",
+      "time": "14:00-16:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened": [
     {
-      "date": "2026-10-24",
+      "date": "2026-10-31",
       "weekday": "土",
       "holiday": null,
-      "municipality": "浦安市",
-      "facility": "中央公園テニスコート",
-      "court": "B面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "美浜テニスコート",
-      "court": "B面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "舞浜テニスコート",
-      "court": "A面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "C面",
+      "start": "14:00",
+      "end": "16:00",
+      "time": "14:00-16:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened_count": 3,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 浦安市 | 中央公園テニスコート | B面 | 11:00-13:00 |\n| 2026-10-24（土） | 浦安市 | 美浜テニスコート | B面 | 13:00-15:00 |\n| 2026-10-24（土） | 浦安市 | 舞浜テニスコート | A面 | 11:00-13:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened_count": 1,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-31（土） | 葛飾区 | 上千葉公園運動場 | C面 | 14:00-16:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
