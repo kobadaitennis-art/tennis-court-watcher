@@ -4080,6 +4080,23 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "浦安市|2026-10-24|高洲中央公園テニスコート|A面|17:00-19:00": {
+      "slot": {
+        "date": "2026-10-24",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "高洲中央公園テニスコート",
+        "court": "A面",
+        "start": "17:00",
+        "end": "19:00",
+        "time": "17:00-19:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
