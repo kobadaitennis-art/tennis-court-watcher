@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-10-23T09:04:33.213723+09:00",
+  "checked_at": "2026-10-23T09:56:50.069341+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "葛飾区 水元総スポテニス 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 にいじゅくみらい公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -284,6 +284,27 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "水元総スポテニス",
       "courts": [],
@@ -698,69 +719,6 @@
     {
       "city": "katsushika",
       "date": "2026-10-31",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-21",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-22",
-      "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-23",
       "facility": "にいじゅくみらい公園",
       "courts": [],
       "monthly_status": "予約あり"
