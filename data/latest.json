@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T00:08:30.001642+09:00",
+  "checked_at": "2026-10-24T00:47:21.441193+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
@@ -280,7 +280,7 @@
       ]
     }
   ],
-  "available_count": 7,
+  "available_count": 6,
   "current": [
     {
       "date": "2026-10-24",
@@ -352,18 +352,6 @@
       "start": "15:00",
       "end": "17:00",
       "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "美浜テニスコート",
-      "court": "B面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     }
   ],
