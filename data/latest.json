@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-24T15:22:55.686470+09:00",
+  "checked_at": "2026-10-24T16:11:23.259186+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 水元総スポテニス 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -358,27 +360,6 @@
       "city": "katsushika",
       "date": "2026-11-23",
       "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-24",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-25",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "水元総スポテニス",
       "courts": [],
       "monthly_status": "予約あり"
     },
@@ -950,20 +931,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 3,
+  "available_count": 2,
   "current": [
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "C面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
     {
       "date": "2026-10-25",
       "weekday": "日",
