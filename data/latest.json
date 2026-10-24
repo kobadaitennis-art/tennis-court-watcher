@@ -1,12 +1,8 @@
 {
-  "checked_at": "2026-10-24T14:57:05.472329+09:00",
+  "checked_at": "2026-10-24T15:22:55.686470+09:00",
   "mode": "both_cities_v3",
-  "success": false,
-  "errors": [
-    "葛飾区 奥戸総スポテニス・野球場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================",
-    "葛飾区 水元総スポテニス 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================",
-    "葛飾区 渋江公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
-  ],
+  "success": true,
+  "errors": [],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -283,6 +279,27 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "奥戸総スポテニス・野球場",
       "courts": [],
@@ -341,6 +358,27 @@
       "city": "katsushika",
       "date": "2026-11-23",
       "facility": "奥戸総スポテニス・野球場",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-24",
+      "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-25",
+      "facility": "水元総スポテニス",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "水元総スポテニス",
       "courts": [],
       "monthly_status": "予約あり"
     },
@@ -508,6 +546,69 @@
     {
       "city": "katsushika",
       "date": "2026-10-31",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-21",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-22",
+      "facility": "渋江公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-23",
       "facility": "渋江公園",
       "courts": [],
       "monthly_status": "予約あり"
@@ -849,116 +950,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 12,
+  "available_count": 3,
   "current": [
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "B面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "C面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "D面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "E面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "F面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "高洲テニスコート",
-      "court": "A面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "高洲テニスコート",
-      "court": "C面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "高洲テニスコート",
-      "court": "D面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
     {
       "date": "2026-10-25",
       "weekday": "日",
