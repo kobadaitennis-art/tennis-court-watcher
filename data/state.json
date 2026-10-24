@@ -3193,9 +3193,9 @@
         "time": "17:00-19:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-25|東金町テニスコート|A面|14:00-16:00": {
       "slot": {
@@ -4706,7 +4706,7 @@
         "time": "18:00-21:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     }
