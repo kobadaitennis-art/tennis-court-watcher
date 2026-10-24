@@ -1,8 +1,10 @@
 {
-  "checked_at": "2026-10-24T10:18:35.720416+09:00",
+  "checked_at": "2026-10-24T11:02:26.450256+09:00",
   "mode": "both_cities_v3",
-  "success": true,
-  "errors": [],
+  "success": false,
+  "errors": [
+    "葛飾区 奥戸総スポテニス・野球場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+  ],
   "target_dates": {
     "urayasu": [
       "2026-10-24",
@@ -279,31 +281,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-10-24",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [
-        "A面",
-        "B面",
-        "C面"
-      ],
-      "monthly_status": "一部空き"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-25",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "奥戸総スポテニス・野球場",
       "courts": [],
@@ -954,7 +931,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 29,
+  "available_count": 20,
   "current": [
     {
       "date": "2026-10-24",
@@ -963,18 +940,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "A面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "A面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -999,18 +964,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "B面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "B面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1035,18 +988,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "C面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "C面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1071,18 +1012,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "D面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "D面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1107,18 +1036,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "E面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "E面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1143,18 +1060,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "F面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "F面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1170,18 +1075,6 @@
       "start": "15:00",
       "end": "17:00",
       "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     },
     {
@@ -1227,18 +1120,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "H面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
       "start": "13:00",
       "end": "15:00",
       "time": "13:00-15:00",
@@ -1291,94 +1172,9 @@
       "end": "17:00",
       "time": "15:00-17:00",
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "奥戸総スポテニス・野球場",
-      "court": "A面",
-      "start": "12:00",
-      "end": "14:00",
-      "time": "12:00-14:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "11:00",
-      "end": "13:00",
-      "time": "11:00-13:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-24",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    }
-  ],
-  "new_or_reopened_count": 6,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | G面 | 11:00-13:00 |\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | G面 | 13:00-15:00 |\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | G面 | 15:00-17:00 |\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | H面 | 11:00-13:00 |\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | H面 | 13:00-15:00 |\n| 2026-10-24（土） | 浦安市 | 運動公園テニスコート | H面 | 15:00-17:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened": [],
+  "new_or_reopened_count": 0,
+  "notification": ""
 }
