@@ -2887,9 +2887,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|D面|15:00-17:00": {
       "slot": {
@@ -2955,9 +2955,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|E面|15:00-17:00": {
       "slot": {
@@ -3023,9 +3023,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|F面|15:00-17:00": {
       "slot": {
@@ -3108,9 +3108,9 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 2
+      "generation": 3
     },
     "浦安市|2026-10-25|運動公園テニスコート|G面|17:00-19:00": {
       "slot": {
@@ -4603,6 +4603,23 @@
         "end": "20:30",
         "time": "18:30-20:30",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
+    },
+    "浦安市|2026-10-25|舞浜テニスコート|B面|13:00-15:00": {
+      "slot": {
+        "date": "2026-10-25",
+        "weekday": "日",
+        "holiday": null,
+        "municipality": "浦安市",
+        "facility": "舞浜テニスコート",
+        "court": "B面",
+        "start": "13:00",
+        "end": "15:00",
+        "time": "13:00-15:00",
+        "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
       "available": true,
       "notified": true,
