@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-24T13:57:32.545437+09:00",
+  "checked_at": "2026-10-24T14:21:04.523779+09:00",
   "mode": "both_cities_v3",
   "success": true,
   "errors": [],
@@ -953,7 +953,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 15,
+  "available_count": 13,
   "current": [
     {
       "date": "2026-10-24",
@@ -1094,30 +1094,6 @@
       "municipality": "浦安市",
       "facility": "運動公園テニスコート",
       "court": "G面",
-      "start": "15:00",
-      "end": "17:00",
-      "time": "15:00-17:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "13:00",
-      "end": "15:00",
-      "time": "13:00-15:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-25",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
       "start": "15:00",
       "end": "17:00",
       "time": "15:00-17:00",
