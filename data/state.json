@@ -2802,9 +2802,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|C面|15:00-17:00": {
       "slot": {
@@ -3091,9 +3091,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|G面|15:00-17:00": {
       "slot": {
@@ -3159,9 +3159,9 @@
         "time": "13:00-15:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "浦安市|2026-10-25|運動公園テニスコート|H面|15:00-17:00": {
       "slot": {
