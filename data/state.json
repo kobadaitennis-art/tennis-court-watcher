@@ -4743,6 +4743,23 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-11-23|東新小岩野球・テニス・会議室|C面|19:00-21:00": {
+      "slot": {
+        "date": "2026-11-23",
+        "weekday": "月",
+        "holiday": "勤労感謝の日",
+        "municipality": "葛飾区",
+        "facility": "東新小岩野球・テニス・会議室",
+        "court": "C面",
+        "start": "19:00",
+        "end": "21:00",
+        "time": "19:00-21:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
