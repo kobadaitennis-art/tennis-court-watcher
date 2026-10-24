@@ -4689,6 +4689,23 @@
         "time": "15:00-17:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
+      "available": false,
+      "notified": true,
+      "generation": 1
+    },
+    "葛飾区|2026-10-31|にいじゅくみらい公園|C面|18:00-21:00": {
+      "slot": {
+        "date": "2026-10-31",
+        "weekday": "土",
+        "holiday": null,
+        "municipality": "葛飾区",
+        "facility": "にいじゅくみらい公園",
+        "court": "C面",
+        "start": "18:00",
+        "end": "21:00",
+        "time": "18:00-21:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
       "available": true,
       "notified": true,
       "generation": 1
