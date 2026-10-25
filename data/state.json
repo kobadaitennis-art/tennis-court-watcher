@@ -4808,7 +4808,7 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 2
     },
@@ -4876,7 +4876,7 @@
         "time": "19:00-21:00",
         "url": "https://k5.p-kashikan.jp/urayasu-city/"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     }
