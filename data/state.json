@@ -4825,9 +4825,9 @@
         "time": "16:00-18:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 2
+      "generation": 3
     }
   }
 }
