@@ -1,9 +1,10 @@
 {
-  "checked_at": "2026-10-25T08:35:59.126979+09:00",
+  "checked_at": "2026-10-25T09:00:06.028216+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
-    "浦安市 2026-11-01: ValueError: Wrong date in search result"
+    "浦安市 2026-11-01: ValueError: Wrong date in search result",
+    "葛飾区 東新小岩野球・テニス・会議室 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -749,81 +750,9 @@
       "facility": "東新小岩野球・テニス・会議室",
       "courts": [],
       "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-21",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-22",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-23",
-      "facility": "東新小岩野球・テニス・会議室",
-      "courts": [
-        "A面",
-        "B面",
-        "C面",
-        "D面",
-        "E面",
-        "F面",
-        "G面",
-        "H面"
-      ],
-      "monthly_status": "一部空き"
     }
   ],
-  "available_count": 8,
+  "available_count": 7,
   "current": [
     {
       "date": "2026-10-25",
@@ -908,34 +837,9 @@
       "end": "21:00",
       "time": "19:00-21:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-11-23",
-      "weekday": "月",
-      "holiday": "勤労感謝の日",
-      "municipality": "葛飾区",
-      "facility": "東新小岩野球・テニス・会議室",
-      "court": "C面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [
-    {
-      "date": "2026-11-23",
-      "weekday": "月",
-      "holiday": "勤労感謝の日",
-      "municipality": "葛飾区",
-      "facility": "東新小岩野球・テニス・会議室",
-      "court": "C面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
-  "new_or_reopened_count": 1,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-11-23（月・祝 勤労感謝の日） | 葛飾区 | 東新小岩野球・テニス・会議室 | C面 | 19:00-21:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened": [],
+  "new_or_reopened_count": 0,
+  "notification": ""
 }
