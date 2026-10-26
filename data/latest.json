@@ -1,10 +1,10 @@
 {
-  "checked_at": "2026-10-26T15:02:45.284986+09:00",
+  "checked_at": "2026-10-26T15:57:23.627399+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
-    "葛飾区 小菅東スポーツ公園 2026-11: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.m_akitablelist\") to be visible\n"
+    "葛飾区 渋江公園 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -328,70 +328,70 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-03",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-07",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-08",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-14",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-15",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-21",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-22",
-      "facility": "渋江公園",
+      "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
       "date": "2026-11-23",
-      "facility": "渋江公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
       "facility": "小菅東スポーツ公園",
       "courts": [],
       "monthly_status": "予約あり"
