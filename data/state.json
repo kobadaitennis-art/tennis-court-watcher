@@ -5100,6 +5100,23 @@
       "available": false,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-11-23|上千葉公園運動場|B面|18:30-20:30": {
+      "slot": {
+        "date": "2026-11-23",
+        "weekday": "月",
+        "holiday": "勤労感謝の日",
+        "municipality": "葛飾区",
+        "facility": "上千葉公園運動場",
+        "court": "B面",
+        "start": "18:30",
+        "end": "20:30",
+        "time": "18:30-20:30",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
