@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-27T21:03:50.813995+09:00",
+  "checked_at": "2026-10-27T21:54:55.690225+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
@@ -408,14 +408,8 @@
       "city": "katsushika",
       "date": "2026-11-03",
       "facility": "小菅東スポーツ公園",
-      "courts": [
-        "A面",
-        "B面",
-        "C面",
-        "D面",
-        "E面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -677,35 +671,9 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 1,
-  "current": [
-    {
-      "date": "2026-11-03",
-      "weekday": "火",
-      "holiday": "文化の日",
-      "municipality": "葛飾区",
-      "facility": "小菅東スポーツ公園",
-      "court": "D面",
-      "start": "08:00",
-      "end": "10:00",
-      "time": "08:00-10:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
-  "new_or_reopened": [
-    {
-      "date": "2026-11-03",
-      "weekday": "火",
-      "holiday": "文化の日",
-      "municipality": "葛飾区",
-      "facility": "小菅東スポーツ公園",
-      "court": "D面",
-      "start": "08:00",
-      "end": "10:00",
-      "time": "08:00-10:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
-  "new_or_reopened_count": 1,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-11-03（火・祝 文化の日） | 葛飾区 | 小菅東スポーツ公園 | D面 | 08:00-10:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "available_count": 0,
+  "current": [],
+  "new_or_reopened": [],
+  "new_or_reopened_count": 0,
+  "notification": ""
 }
