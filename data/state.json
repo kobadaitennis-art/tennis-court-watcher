@@ -4964,6 +4964,23 @@
       "available": true,
       "notified": true,
       "generation": 1
+    },
+    "葛飾区|2026-11-03|小菅東スポーツ公園|E面|14:00-16:00": {
+      "slot": {
+        "date": "2026-11-03",
+        "weekday": "火",
+        "holiday": "文化の日",
+        "municipality": "葛飾区",
+        "facility": "小菅東スポーツ公園",
+        "court": "E面",
+        "start": "14:00",
+        "end": "16:00",
+        "time": "14:00-16:00",
+        "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+      },
+      "available": true,
+      "notified": true,
+      "generation": 1
     }
   }
 }
