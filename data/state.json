@@ -3278,9 +3278,9 @@
         "time": "18:30-20:30",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 2
+      "generation": 3
     },
     "葛飾区|2026-11-01|渋江公園|A面|18:30-20:30": {
       "slot": {
