@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-28T12:12:35.951567+09:00",
+  "checked_at": "2026-10-28T12:54:03.276489+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
@@ -563,12 +563,8 @@
       "city": "katsushika",
       "date": "2026-11-23",
       "facility": "上千葉公園運動場",
-      "courts": [
-        "A面",
-        "B面",
-        "C面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -732,21 +728,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 1,
-  "current": [
-    {
-      "date": "2026-11-23",
-      "weekday": "月",
-      "holiday": "勤労感謝の日",
-      "municipality": "葛飾区",
-      "facility": "上千葉公園運動場",
-      "court": "B面",
-      "start": "18:30",
-      "end": "20:30",
-      "time": "18:30-20:30",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    }
-  ],
+  "available_count": 0,
+  "current": [],
   "new_or_reopened": [],
   "new_or_reopened_count": 0,
   "notification": ""
