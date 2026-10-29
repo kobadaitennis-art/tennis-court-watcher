@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-10-29T22:33:37.626865+09:00",
+  "checked_at": "2026-10-29T23:33:52.902620+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
     "浦安市 2026-11-03: ValueError: Wrong date in search result",
-    "葛飾区 小菅東スポーツ公園 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -451,6 +451,13 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-10-31",
+      "facility": "小菅東スポーツ公園",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-11-01",
       "facility": "小菅東スポーツ公園",
       "courts": [],
@@ -523,13 +530,6 @@
       "city": "katsushika",
       "date": "2026-11-29",
       "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "上千葉公園運動場",
       "courts": [],
       "monthly_status": "予約あり"
     },
