@@ -1,10 +1,11 @@
 {
-  "checked_at": "2026-10-29T09:15:33.049435+09:00",
+  "checked_at": "2026-10-29T10:13:34.356968+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
-    "浦安市 2026-11-03: ValueError: Wrong date in search result"
+    "浦安市 2026-11-03: ValueError: Wrong date in search result",
+    "葛飾区 奥戸総スポテニス・野球場 2026-11: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.m_akitablelist\") to be visible\n"
   ],
   "target_dates": {
     "urayasu": [
@@ -121,83 +122,6 @@
     },
     {
       "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-21",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-22",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-23",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-28",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-29",
-      "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
       "date": "2026-10-31",
       "facility": "水元総スポテニス",
       "courts": [],
@@ -557,8 +481,12 @@
       "city": "katsushika",
       "date": "2026-11-07",
       "facility": "上千葉公園運動場",
-      "courts": [],
-      "monthly_status": "予約あり"
+      "courts": [
+        "A面",
+        "B面",
+        "C面"
+      ],
+      "monthly_status": "一部空き"
     },
     {
       "city": "katsushika",
@@ -585,8 +513,12 @@
       "city": "katsushika",
       "date": "2026-11-21",
       "facility": "上千葉公園運動場",
-      "courts": [],
-      "monthly_status": "予約あり"
+      "courts": [
+        "A面",
+        "B面",
+        "C面"
+      ],
+      "monthly_status": "一部空き"
     },
     {
       "city": "katsushika",
@@ -789,8 +721,32 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 2,
+  "available_count": 3,
   "current": [
+    {
+      "date": "2026-11-07",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "A面",
+      "start": "18:30",
+      "end": "20:30",
+      "time": "18:30-20:30",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
+    {
+      "date": "2026-11-21",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "B面",
+      "start": "16:00",
+      "end": "18:00",
+      "time": "16:00-18:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
     {
       "date": "2026-11-29",
       "weekday": "日",
@@ -802,21 +758,34 @@
       "end": "20:30",
       "time": "18:30-20:30",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
+    }
+  ],
+  "new_or_reopened": [
     {
-      "date": "2026-11-29",
-      "weekday": "日",
+      "date": "2026-11-07",
+      "weekday": "土",
       "holiday": null,
       "municipality": "葛飾区",
       "facility": "上千葉公園運動場",
-      "court": "C面",
+      "court": "A面",
       "start": "18:30",
       "end": "20:30",
       "time": "18:30-20:30",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
+    },
+    {
+      "date": "2026-11-21",
+      "weekday": "土",
+      "holiday": null,
+      "municipality": "葛飾区",
+      "facility": "上千葉公園運動場",
+      "court": "B面",
+      "start": "16:00",
+      "end": "18:00",
+      "time": "16:00-18:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened": [],
-  "new_or_reopened_count": 0,
-  "notification": ""
+  "new_or_reopened_count": 2,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-11-07（土） | 葛飾区 | 上千葉公園運動場 | A面 | 18:30-20:30 |\n| 2026-11-21（土） | 葛飾区 | 上千葉公園運動場 | B面 | 16:00-18:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
