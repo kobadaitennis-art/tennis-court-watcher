@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-29T08:44:58.900555+09:00",
+  "checked_at": "2026-10-29T09:15:33.049435+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
@@ -789,32 +789,8 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 4,
+  "available_count": 2,
   "current": [
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "E面",
-      "start": "19:00",
-      "end": "21:00",
-      "time": "19:00-21:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-11-29",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "上千葉公園運動場",
-      "court": "B面",
-      "start": "16:00",
-      "end": "18:00",
-      "time": "16:00-18:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
     {
       "date": "2026-11-29",
       "weekday": "日",
