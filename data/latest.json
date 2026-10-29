@@ -1,10 +1,11 @@
 {
-  "checked_at": "2026-10-29T12:37:48.642450+09:00",
+  "checked_at": "2026-10-29T13:25:58.899386+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
-    "浦安市 2026-11-03: ValueError: Wrong date in search result"
+    "浦安市 2026-11-03: ValueError: Wrong date in search result",
+    "葛飾区 東新小岩野球・テニス・会議室 2026-10: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -701,13 +702,6 @@
       "city": "katsushika",
       "date": "2026-11-29",
       "facility": "にいじゅくみらい公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "東新小岩野球・テニス・会議室",
       "courts": [],
       "monthly_status": "予約あり"
     },
