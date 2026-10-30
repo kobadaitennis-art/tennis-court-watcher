@@ -5267,9 +5267,9 @@
         "time": "18:30-20:30",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-11-21|上千葉公園運動場|B面|16:00-18:00": {
       "slot": {
@@ -5420,7 +5420,7 @@
         "time": "08:00-10:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5437,7 +5437,7 @@
         "time": "10:00-12:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5454,7 +5454,7 @@
         "time": "12:00-14:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5488,7 +5488,7 @@
         "time": "08:00-10:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5505,7 +5505,7 @@
         "time": "10:00-12:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5522,7 +5522,7 @@
         "time": "12:00-14:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     },
@@ -5675,7 +5675,7 @@
         "time": "14:00-16:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": true,
+      "available": false,
       "notified": true,
       "generation": 1
     }
