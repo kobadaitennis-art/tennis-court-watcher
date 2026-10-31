@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-10-31T21:04:50.692131+09:00",
+  "checked_at": "2026-10-31T21:56:02.951297+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
     "浦安市 2026-11-03: ValueError: Wrong date in search result",
     "浦安市 2026-11-07: ValueError: Wrong date in search result",
-    "葛飾区 東金町テニスコート 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 上千葉公園運動場 2026-10: TimeoutError: Locator.wait_for: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"table.m_akitablelist\") to be visible\n"
   ],
   "target_dates": {
     "urayasu": [
@@ -292,6 +292,83 @@
     },
     {
       "city": "katsushika",
+      "date": "2026-11-01",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-03",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-07",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-08",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-14",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-15",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-21",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-22",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-23",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-28",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
+      "date": "2026-11-29",
+      "facility": "東金町テニスコート",
+      "courts": [],
+      "monthly_status": "予約あり"
+    },
+    {
+      "city": "katsushika",
       "date": "2026-10-31",
       "facility": "渋江公園",
       "courts": [],
@@ -455,13 +532,6 @@
       "city": "katsushika",
       "date": "2026-11-29",
       "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-10-31",
-      "facility": "上千葉公園運動場",
       "courts": [],
       "monthly_status": "予約あり"
     },
