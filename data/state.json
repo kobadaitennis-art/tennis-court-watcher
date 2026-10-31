@@ -864,9 +864,9 @@
         "time": "18:30-20:30",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 1
+      "generation": 2
     },
     "葛飾区|2026-10-24|にいじゅくみらい公園|A面|08:00-10:00": {
       "slot": {
@@ -5777,9 +5777,9 @@
         "time": "19:00-21:00",
         "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
       },
-      "available": false,
+      "available": true,
       "notified": true,
-      "generation": 2
+      "generation": 3
     },
     "葛飾区|2026-11-01|上千葉公園運動場|B面|18:30-20:30": {
       "slot": {
