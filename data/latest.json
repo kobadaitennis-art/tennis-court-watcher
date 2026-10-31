@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-31T15:35:39.387328+09:00",
+  "checked_at": "2026-10-31T16:35:48.682669+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
@@ -461,8 +461,14 @@
       "city": "katsushika",
       "date": "2026-11-01",
       "facility": "小菅東スポーツ公園",
-      "courts": [],
-      "monthly_status": "予約あり"
+      "courts": [
+        "A面",
+        "B面",
+        "C面",
+        "D面",
+        "E面"
+      ],
+      "monthly_status": "一部空き"
     },
     {
       "city": "katsushika",
@@ -633,12 +639,8 @@
       "city": "katsushika",
       "date": "2026-11-01",
       "facility": "にいじゅくみらい公園",
-      "courts": [
-        "A面",
-        "B面",
-        "C面"
-      ],
-      "monthly_status": "一部空き"
+      "courts": [],
+      "monthly_status": "予約あり"
     },
     {
       "city": "katsushika",
@@ -795,7 +797,7 @@
       "monthly_status": "予約あり"
     }
   ],
-  "available_count": 9,
+  "available_count": 8,
   "current": [
     {
       "date": "2026-10-31",
@@ -870,16 +872,16 @@
       "url": "https://k5.p-kashikan.jp/urayasu-city/"
     },
     {
-      "date": "2026-10-31",
-      "weekday": "土",
+      "date": "2026-11-01",
+      "weekday": "日",
       "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
+      "municipality": "葛飾区",
+      "facility": "小菅東スポーツ公園",
+      "court": "C面",
+      "start": "08:00",
+      "end": "10:00",
+      "time": "08:00-10:00",
+      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     },
     {
       "date": "2026-11-01",
@@ -892,118 +894,22 @@
       "end": "20:30",
       "time": "18:30-20:30",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
-    },
-    {
-      "date": "2026-11-01",
-      "weekday": "日",
-      "holiday": null,
-      "municipality": "葛飾区",
-      "facility": "にいじゅくみらい公園",
-      "court": "A面",
-      "start": "18:00",
-      "end": "21:00",
-      "time": "18:00-21:00",
-      "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
   "new_or_reopened": [
     {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "B面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "C面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "D面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "E面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "F面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "G面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
-      "date": "2026-10-31",
-      "weekday": "土",
-      "holiday": null,
-      "municipality": "浦安市",
-      "facility": "運動公園テニスコート",
-      "court": "H面",
-      "start": "17:00",
-      "end": "19:00",
-      "time": "17:00-19:00",
-      "url": "https://k5.p-kashikan.jp/urayasu-city/"
-    },
-    {
       "date": "2026-11-01",
       "weekday": "日",
       "holiday": null,
       "municipality": "葛飾区",
-      "facility": "にいじゅくみらい公園",
-      "court": "A面",
-      "start": "18:00",
-      "end": "21:00",
-      "time": "18:00-21:00",
+      "facility": "小菅東スポーツ公園",
+      "court": "C面",
+      "start": "08:00",
+      "end": "10:00",
+      "time": "08:00-10:00",
       "url": "https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp"
     }
   ],
-  "new_or_reopened_count": 8,
-  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | B面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | C面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | D面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | E面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | F面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | G面 | 17:00-19:00 |\n| 2026-10-31（土） | 浦安市 | 運動公園テニスコート | H面 | 17:00-19:00 |\n| 2026-11-01（日） | 葛飾区 | にいじゅくみらい公園 | A面 | 18:00-21:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
+  "new_or_reopened_count": 1,
+  "notification": "🎾 テニスコートの新規・再公開の空き\n\n| 日付・曜日 | 自治体 | 施設 | 面 | 時間 |\n|---|---|---|---|---|\n| 2026-11-01（日） | 葛飾区 | 小菅東スポーツ公園 | C面 | 08:00-10:00 |\n\n[葛飾区予約サイト](https://rsv.shisetsu.city.katsushika.lg.jp/katsushika/web/index.jsp) ／ [浦安市予約サイト](https://k5.p-kashikan.jp/urayasu-city/)\n\n通知後に埋まる可能性があります。予約前に空き状況を再確認してください。"
 }
