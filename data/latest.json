@@ -1,12 +1,13 @@
 {
-  "checked_at": "2026-11-01T13:57:30.379311+09:00",
+  "checked_at": "2026-11-01T14:37:33.515537+09:00",
   "mode": "both_cities_v3",
   "success": false,
   "errors": [
     "浦安市 2026-11-01: ValueError: Wrong date in search result",
     "浦安市 2026-11-03: ValueError: Wrong date in search result",
     "浦安市 2026-11-07: ValueError: Wrong date in search result",
-    "浦安市 2026-11-08: ValueError: Wrong date in search result"
+    "浦安市 2026-11-08: ValueError: Wrong date in search result",
+    "葛飾区 水元総スポテニス 2026-11: TimeoutError: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
   ],
   "target_dates": {
     "urayasu": [
@@ -104,83 +105,6 @@
       "city": "katsushika",
       "date": "2026-11-29",
       "facility": "奥戸総スポテニス・野球場",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-01",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-03",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-07",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-08",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-14",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-15",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-21",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-22",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-23",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-28",
-      "facility": "水元総スポテニス",
-      "courts": [],
-      "monthly_status": "予約あり"
-    },
-    {
-      "city": "katsushika",
-      "date": "2026-11-29",
-      "facility": "水元総スポテニス",
       "courts": [],
       "monthly_status": "予約あり"
     },
