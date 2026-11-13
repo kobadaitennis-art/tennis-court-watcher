@@ -11,6 +11,7 @@ from zoneinfo import ZoneInfo
 import holidays
 from playwright.async_api import async_playwright
 
+PARSER_BUILD = 'katsushika-legend-v5'
 ROOT = Path(__file__).parent
 DATA = ROOT / 'data'
 JST = ZoneInfo('Asia/Tokyo')
@@ -144,12 +145,51 @@ def parse_urayasu(areas, d):
     return result, found
 
 
-KATSUSHIKA_DOM = r"""() => Array.from(document.querySelectorAll('table.akitablelist')).map(t =>
- Array.from(t.rows).map(r => Array.from(r.cells).map(c=>({text:c.textContent.trim(), colspan:c.colSpan,
-   images:Array.from(c.querySelectorAll('img')).map(i=>({alt:i.alt, src:i.getAttribute('src')}))}))))"""
+KATSUSHIKA_DOM = r"""() => {
+ const tables = Array.from(document.querySelectorAll('table.akitablelist')).map(t =>
+   Array.from(t.rows).map(r => Array.from(r.cells).map(c => ({
+     text:c.textContent.trim(), colspan:c.colSpan,
+     images:Array.from(c.querySelectorAll('img')).map(i => ({alt:i.alt, src:i.getAttribute('src')}))
+   }))));
+ // Read labels on the same page; filenames are never used as status guesses.
+ const legend = Array.from(document.querySelectorAll('img'))
+   .filter(i => !i.closest('table.akitablelist'))
+   .map(i => ({src:i.getAttribute('src'), labels:[
+     i.alt, i.title,
+     i.nextSibling?.textContent?.trim(), i.previousSibling?.textContent?.trim(),
+     i.parentElement?.textContent?.trim()
+   ].filter(Boolean).filter(t => t.length < 100)}));
+ return {tables, legend};
+}"""
+
+KATSUSHIKA_STATUSES = {
+    '空き', '予約あり', '予約済', '予約済み', '受付期間外', '休館日', '休館',
+    '保守日', '悪天候', '利用不可', '予約不可', '抽選', '抽選受付中',
+    '時間外', '対象外', '対象時間外', '利用時間外', '利用対象外',
+}
+
+
+def katsushika_legend(entries):
+    labels = {}
+    for entry in entries:
+        for text in entry.get('labels', []):
+            label = norm(text).strip(' :：=()（）\n\t')
+            if label not in KATSUSHIKA_STATUSES:
+                continue
+            src = entry.get('src')
+            if not src:
+                continue
+            if src in labels and labels[src] != label:
+                raise ValueError(f'Ambiguous status legend for {src}')
+            labels[src] = label
+    return labels
 
 
 def parse_katsushika(tables, d, facility, observations=None):
+    legend = {}
+    if isinstance(tables, dict):
+        legend = katsushika_legend(tables.get('legend', []))
+        tables = tables['tables']
     if len(tables) != 1 or len(tables[0]) < 2:
         raise ValueError('Missing/ambiguous day table')
     rows = tables[0]; header = rows[0]
@@ -181,9 +221,14 @@ def parse_katsushika(tables, d, facility, observations=None):
         for cell, (start, end) in zip(row[1:], times):
             if not cell['images']:
                 raise ValueError('Missing cell status image')
-            statuses = [norm(i['alt']) for i in cell['images']]
-            allowed = {'空き', '予約あり', '予約済', '予約済み', '受付期間外', '休館日', '休館', '保守日', '悪天候', '利用不可', '予約不可', '抽選', '抽選受付中'}
-            if len(statuses) != 1 or statuses[0] not in allowed:
+            statuses = []
+            for icon in cell['images']:
+                direct = norm(icon.get('alt', ''))
+                mapped = legend.get(icon.get('src'))
+                if direct and mapped and direct != mapped:
+                    raise ValueError('Cell status conflicts with legend')
+                statuses.append(direct or mapped or '')
+            if len(statuses) != 1 or statuses[0] not in KATSUSHIKA_STATUSES:
                 raise ValueError(f'Unknown day status: {statuses}')
             checked_cells.append({'court':court,'start':start,'end':end,'status':statuses[0]})
             if statuses[0] == '空き':
@@ -402,6 +447,7 @@ def build_notification(slots):
 
 
 async def main():
+    print(f'Parser build: {PARSER_BUILD}', flush=True)
     DATA.mkdir(exist_ok=True)
     now = datetime.now(JST)
     today = now.date()
@@ -426,7 +472,7 @@ async def main():
     # Never notify a same-day session which has already started.
     slots=[s for s in slots if datetime.fromisoformat(s['date']+'T'+s['start']).replace(tzinfo=JST)>now]
     new=update_state(state,slots,coverage)
-    payload={'checked_at':now.isoformat(),'mode':'katsushika_daily_v4','success':not errors and not skipped,'errors':errors,
+    payload={'parser_build':PARSER_BUILD,'checked_at':now.isoformat(),'mode':'katsushika_daily_v4','success':not errors and not skipped,'errors':errors,
              'skipped':skipped,'expected_scopes':expected,
              'target_dates':{c:[d.isoformat() for d in ds] for c,ds in dates.items()},'coverage':coverage,
              'available_count':len(slots),'current':slots,'new_or_reopened':new,'new_or_reopened_count':len(new),
