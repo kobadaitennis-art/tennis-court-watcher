@@ -149,7 +149,7 @@ KATSUSHIKA_DOM = r"""() => Array.from(document.querySelectorAll('table.akitablel
    images:Array.from(c.querySelectorAll('img')).map(i=>({alt:i.alt, src:i.getAttribute('src')}))}))))"""
 
 
-def parse_katsushika(tables, d, facility):
+def parse_katsushika(tables, d, facility, observations=None):
     if len(tables) != 1 or len(tables[0]) < 2:
         raise ValueError('Missing/ambiguous day table')
     rows = tables[0]; header = rows[0]
@@ -166,7 +166,12 @@ def parse_katsushika(tables, d, facility):
                 raise ValueError('Invalid HHMM')
             return s[:2]+':'+s[2:]
         times.append((hhmm(m[1]), hhmm(m[2])))
+    if not times or len(set(times)) != len(times):
+        raise ValueError('Missing/duplicate time columns')
+    if any(start >= end for start, end in times):
+        raise ValueError('Invalid time span')
     slots, courts = [], []
+    checked_cells = []
     for row in rows[1:]:
         if 'テニス' not in norm(row[0]['text']):
             continue
@@ -176,11 +181,18 @@ def parse_katsushika(tables, d, facility):
         for cell, (start, end) in zip(row[1:], times):
             if not cell['images']:
                 raise ValueError('Missing cell status image')
-            if any(i['alt'] == '空き' for i in cell['images']):
+            statuses = [norm(i['alt']) for i in cell['images']]
+            allowed = {'空き', '予約あり', '予約済', '予約済み', '受付期間外', '休館日', '休館', '保守日', '悪天候', '利用不可', '予約不可', '抽選', '抽選受付中'}
+            if len(statuses) != 1 or statuses[0] not in allowed:
+                raise ValueError(f'Unknown day status: {statuses}')
+            checked_cells.append({'court':court,'start':start,'end':end,'status':statuses[0]})
+            if statuses[0] == '空き':
                 slots.append(make_slot('katsushika', d, facility, court, start, end))
     expected = {c+'面' for c in KATSUSHIKA_COURTS[facility]}
     if set(courts) != expected or len(courts) != len(expected):
         raise ValueError('Missing/duplicate tennis courts')
+    if observations is not None:
+        observations.extend(checked_cells)
     return slots, courts
 
 
@@ -292,37 +304,54 @@ async def check_katsushika(browser, dates):
         except Exception as e:
             return [], [], [f'葛飾区 initial search: {type(e).__name__}: {e}']
         for facility in KATSUSHIKA:
-            for y,m in sorted({(d.year,d.month) for d in dates}):
+            for y, m in sorted({(d.year, d.month) for d in dates}):
                 try:
-                    await month_view(page, facility, y,m)
-                    for d in [d for d in dates if (d.year,d.month)==(y,m)]:
-                        status = await month_status(page, d)
-                        if not status or status['status'] not in ('全て空き','一部空き','予約あり','受付期間外','休館日','保守日','悪天候'):
-                            raise ValueError(f'Unknown monthly status: {d} {status}')
-                        day_slots=[]; courts=[]
-                        if status['status'] in ('全て空き','一部空き'):
-                            # Locator comes from observed calendar href, not a generated action.
-                            link = page.locator('a[href='+json.dumps(status['href'])+']')
-                            await click_k_locator(page, link)
-                            await page.locator('table.akitablelist').wait_for(timeout=30000)
-                            await page.get_by_role('link', name=facility, exact=True).wait_for(timeout=30000)
-                            selected = await page.locator('#selectBldCd option:checked').inner_text()
-                            if selected.strip()!=facility:
-                                raise ValueError('Wrong facility in daily result')
-                            day_slots,courts=parse_katsushika(await page.evaluate(KATSUSHIKA_DOM), d, facility)
-                            await click_link(page,'もどる')
-                            await page.get_by_role('link',name='次の月',exact=True).wait_for(timeout=30000)
-                        slots.extend(day_slots)
-                        coverage.append({'city':'katsushika','date':d.isoformat(),'facility':facility,'courts':courts,'monthly_status':status['status']})
+                    await month_view(page, facility, y, m)
                 except Exception as e:
                     errors.append(f'葛飾区 {facility} {y}-{m}: {type(e).__name__}: {e}')
-                    # Recover public search for other facilities; never reset their previous availability.
                     try:
                         await open_katsushika(page)
                     except Exception as recovery:
                         errors.append(f'葛飾区 search recovery: {recovery}')
-                        return slots,coverage,errors
-        return slots,coverage,errors
+                        return slots, coverage, errors
+                    continue
+                for d in [d for d in dates if (d.year, d.month) == (y, m)]:
+                    try:
+                        status = await month_status(page, d)
+                        if not status or not status.get('href'):
+                            raise ValueError(f'Daily view unavailable; status unconfirmed: {d} {status}')
+                        # Every observed day link is inspected, including monthly "予約あり".
+                        link = page.locator('a[href=' + json.dumps(status['href']) + ']')
+                        await click_k_locator(page, link)
+                        await page.locator('table.akitablelist').wait_for(timeout=30000)
+                        selected = await page.locator('#selectBldCd option:checked').inner_text()
+                        if selected.strip() != facility:
+                            raise ValueError('Wrong facility in daily result')
+                        observations = []
+                        tables = await page.evaluate(KATSUSHIKA_DOM)
+                        day_slots, courts = parse_katsushika(tables, d, facility, observations)
+                        # Only fully parsed daily scopes can change the previous vacancy state.
+                        slots.extend(day_slots)
+                        coverage.append({
+                            'city': 'katsushika', 'date': d.isoformat(), 'facility': facility,
+                            'courts': courts, 'monthly_status': status['status'],
+                            'verified_by': 'daily_court_time_cells',
+                            'checked_cell_count': len(observations), 'cells': observations,
+                        })
+                        print(f'Confirmed {d} {facility}: {len(courts)} courts, {len(observations)} cells', flush=True)
+                        await click_link(page, 'もどる')
+                        await page.get_by_role('link', name='次の月', exact=True).wait_for(timeout=30000)
+                    except Exception as e:
+                        errors.append(f'葛飾区 {facility} {d}: {type(e).__name__}: {e}')
+                        # Log public table evidence for a schema change without treating it as full.
+                        try:
+                            print('Unconfirmed daily table:', json.dumps(await page.evaluate(KATSUSHIKA_DOM), ensure_ascii=False), flush=True)
+                            await open_katsushika(page)
+                            await month_view(page, facility, y, m)
+                        except Exception as recovery:
+                            errors.append(f'葛飾区 search recovery: {recovery}')
+                            return slots, coverage, errors
+        return slots, coverage, errors
     finally:
         await context.close()
 
@@ -367,40 +396,38 @@ def build_notification(slots):
     for s in sorted(slots,key=slot_key):
         holiday=f'・祝 {s["holiday"]}' if s.get('holiday') else ''
         lines.append(f'| {s["date"]}（{s["weekday"]}{holiday}） | {s["municipality"]} | {s["facility"]} | {s["court"]} | {s["time"]} |')
-    lines.extend(['',f'[葛飾区予約サイト]({URLS["katsushika"]}) ／ [浦安市予約サイト]({URLS["urayasu"]})',
+    lines.extend(['',f'[葛飾区予約サイト]({URLS["katsushika"]})',
                   '', '通知後に埋まる可能性があります。予約前に空き状況を再確認してください。'])
     return '\n'.join(lines)
 
 
 async def main():
     DATA.mkdir(exist_ok=True)
-    now=datetime.now(JST); today=now.date()
-    dates={'urayasu':target_dates(today,7),'katsushika':target_dates(today,(next_month(today)-today).days)}
-    state=load_state(); slots=[]; coverage=[]; errors=[]
-    async with async_playwright() as p:
-        browser=await p.chromium.launch(headless=True)
-        try:
-            for d in dates['urayasu']:
+    now = datetime.now(JST)
+    today = now.date()
+    dates = {'katsushika': target_dates(today, (next_month(today) - today).days)}
+    state = load_state()
+    slots, coverage, errors = [], [], []
+    skipped = not (7 <= now.hour < 24)
+    if not skipped:
+        async with async_playwright() as p:
+            browser = await p.chromium.launch(headless=True)
+            try:
                 try:
-                    found,courts=await check_urayasu(browser,d)
-                    slots.extend(found)
-                    coverage.extend({'city':'urayasu','date':d.isoformat(),'facility':f,'courts':cs} for f,cs in courts.items())
-                except Exception as e:
-                    errors.append(f'浦安市 {d}: {type(e).__name__}: {e}')
-            if 7 <= now.hour < 24:
-                found,checked,failures=await check_katsushika(browser,dates['katsushika'])
-                slots.extend(found);coverage.extend(checked);errors.extend(failures)
-            else:
-                errors.append('葛飾区は公開システム稼働時間外（7時〜24時）。状態は保持。')
-        finally:
-            await browser.close()
-    expected=sum(len(ds)*8 for ds in dates.values())
-    if len(coverage)!=expected and not errors:
+                    slots, coverage, errors = await asyncio.wait_for(
+                        check_katsushika(browser, dates['katsushika']), timeout=660)
+                except Exception as exc:
+                    errors.append(f'葛飾区 monitor: {type(exc).__name__}: {exc}')
+            finally:
+                await browser.close()
+    expected = len(dates['katsushika']) * len(KATSUSHIKA)
+    if not skipped and len(coverage) != expected and not errors:
         errors.append(f'Incomplete coverage: {len(coverage)}/{expected} facility/date scopes')
     # Never notify a same-day session which has already started.
     slots=[s for s in slots if datetime.fromisoformat(s['date']+'T'+s['start']).replace(tzinfo=JST)>now]
     new=update_state(state,slots,coverage)
-    payload={'checked_at':now.isoformat(),'mode':'both_cities_v3','success':not errors,'errors':errors,
+    payload={'checked_at':now.isoformat(),'mode':'katsushika_daily_v4','success':not errors and not skipped,'errors':errors,
+             'skipped':skipped,'expected_scopes':expected,
              'target_dates':{c:[d.isoformat() for d in ds] for c,ds in dates.items()},'coverage':coverage,
              'available_count':len(slots),'current':slots,'new_or_reopened':new,'new_or_reopened_count':len(new),
              'notification':build_notification(new)}
