@@ -22,6 +22,7 @@ jobs:
   watch:
     runs-on: ubuntu-latest
     timeout-minutes: 15
+
     env:
       DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
 
@@ -45,125 +46,6 @@ jobs:
 
       - name: Install Chromium
         run: python -m playwright install --with-deps chromium
-
-      - name: Diagnose public reservation pages
-        if: env.DRY_RUN == 'true'
-        run: |
-          python -u - <<'PY'
-          import asyncio
-          import json
-          from datetime import datetime
-          from zoneinfo import ZoneInfo
-
-          from playwright.async_api import async_playwright
-          from watcher import (
-              URLS,
-              open_katsushika,
-              month_status,
-              target_dates,
-          )
-
-          async def diagnose():
-              async with async_playwright() as p:
-                  browser = await p.chromium.launch(headless=True)
-
-                  for city in ("urayasu", "katsushika"):
-                      context = await browser.new_context(
-                          locale="ja-JP",
-                          timezone_id="Asia/Tokyo",
-                      )
-                      page = await context.new_page()
-                      page.set_default_timeout(15000)
-
-                      try:
-                          print(f"\n=== {city} ===")
-
-                          response = await page.goto(
-                              URLS[city],
-                              wait_until="domcontentloaded",
-                              timeout=60000,
-                          )
-
-                          print(
-                              "HTTP:",
-                              response.status if response else None,
-                          )
-                          print("TITLE:", await page.title())
-                          print(
-                              "BODY:",
-                              (
-                                  await page.locator("body").inner_text()
-                              )[:18000],
-                          )
-
-                          links = await page.locator("a").evaluate_all(
-                              """es => es.map(e => ({
-                                  text: e.innerText,
-                                  href: e.getAttribute('href'),
-                                  alt: e.querySelector('img')?.alt
-                              }))"""
-                          )
-                          print(
-                              "LINKS:",
-                              json.dumps(links, ensure_ascii=False),
-                          )
-
-                          if city == "katsushika":
-                              await open_katsushika(page)
-
-                              print(
-                                  "MONTH:",
-                                  await page.locator(
-                                      "table.m_akitablelist"
-                                  ).inner_text(),
-                              )
-
-                              today = datetime.now(
-                                  ZoneInfo("Asia/Tokyo")
-                              ).date()
-                              dates = target_dates(today, 7)
-
-                              if dates:
-                                  print(
-                                      "TARGET DATE:",
-                                      dates[0].isoformat(),
-                                  )
-                                  print(
-                                      "TARGET DAY:",
-                                      await month_status(page, dates[0]),
-                                  )
-
-                              calendar_links = await page.locator(
-                                  'a[href*="selectDay"]'
-                              ).evaluate_all(
-                                  """es => es.map(e => ({
-                                      text: e.innerText,
-                                      href: e.getAttribute('href'),
-                                      alt: e.querySelector('img')?.alt
-                                  }))"""
-                              )
-                              print(
-                                  "CALENDAR LINKS:",
-                                  json.dumps(
-                                      calendar_links,
-                                      ensure_ascii=False,
-                                  ),
-                              )
-
-                      except Exception as exc:
-                          print(
-                              "ERROR:",
-                              type(exc).__name__,
-                              str(exc),
-                          )
-
-                      finally:
-                          await context.close()
-
-                  await browser.close()
-
-          asyncio.run(diagnose())
-          PY
 
       - name: Check tennis courts
         run: python watcher.py
@@ -192,25 +74,27 @@ jobs:
           import os
           from pathlib import Path
 
-          p = Path("data/latest.json")
-          if p.exists():
-              data = json.loads(p.read_text(encoding="utf-8"))
+          path = Path("data/latest.json")
+          if path.exists():
+              data = json.loads(path.read_text(encoding="utf-8"))
               with open(
                   os.environ["GITHUB_STEP_SUMMARY"],
                   "a",
                   encoding="utf-8",
               ) as out:
-                  out.write(
-                      f"## Checked at {data.get('checked_at')}\n"
-                  )
+                  out.write(f"## Checked at {data.get('checked_at')}\n\n")
+                  out.write(f"Mode: {data.get('mode')}\n\n")
                   out.write(
                       "Confirmed facility/date scopes: "
-                      f"{len(data.get('coverage', []))}\n\n"
+                      f"{len(data.get('coverage', []))}"
+                      f"/{data.get('expected_scopes', '?')}\n\n"
                   )
                   out.write(
                       f"Available: {data.get('available_count')} / "
                       f"new: {data.get('new_or_reopened_count')}\n\n"
                   )
+                  if data.get("skipped"):
+                      out.write("Outside operating hours; previous state retained.\n\n")
                   for error in data.get("errors", []):
                       out.write(f"- Incomplete: {error}\n")
           PY
@@ -224,4 +108,36 @@ jobs:
             data/latest.json
             data/pending-state.json
           retention-days: 7
-          
+
+      - name: Require complete coverage during manual validation
+        if: success() && env.DRY_RUN == 'true'
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(
+              Path("data/latest.json").read_text(encoding="utf-8")
+          )
+
+          assert data.get("mode") == "katsushika_daily_v4", (
+              "watcher.py has not been replaced with the Katsushika version"
+          )
+          assert data.get("success"), (
+              "Incomplete acquisition: inspect errors in latest-check"
+          )
+
+          coverage = data["coverage"]
+
+          assert len(coverage) == data["expected_scopes"], (
+              "Missing facility/date scope"
+          )
+          assert all(
+              item.get("courts")
+              and item.get("checked_cell_count", 0) > 0
+              and item.get("verified_by") == "daily_court_time_cells"
+              for item in coverage
+          ), "Missing court/time verification"
+
+          print("All Katsushika facility/date/court/time scopes verified.")
+          PY
