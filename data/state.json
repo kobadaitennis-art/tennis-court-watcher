@@ -6548,9 +6548,9 @@
     }
   },
   "katsushika_health": {
-    "failures": 1,
+    "failures": 2,
     "incident": 1,
-    "last_check": "2026-11-13T12:37:56.793734+09:00",
-    "alerted": false
+    "last_check": "2026-11-13T20:36:04.874111+09:00",
+    "alerted": true
   }
 }
