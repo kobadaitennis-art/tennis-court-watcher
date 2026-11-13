@@ -1,12 +1,10 @@
 {
   "parser_build": "katsushika-legend-v5",
-  "checked_at": "2026-11-13T20:36:04.874111+09:00",
+  "checked_at": "2026-11-14T03:47:20.586542+09:00",
   "mode": "katsushika_daily_v4",
   "success": false,
-  "errors": [
-    "葛飾区 monitor: TimeoutError: "
-  ],
-  "skipped": false,
+  "errors": [],
+  "skipped": true,
   "expected_scopes": 88,
   "target_dates": {
     "katsushika": [
