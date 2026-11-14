@@ -1,15 +1,10 @@
 {
   "parser_build": "katsushika-legend-v5",
-  "checked_at": "2026-11-14T08:56:16.187314+09:00",
+  "checked_at": "2026-11-14T13:56:28.489221+09:00",
   "mode": "katsushika_daily_v4",
   "success": false,
   "errors": [
-    "葛飾区 奥戸総スポテニス・野球場 2026-11-14: ValueError: Unknown day status: ['']",
-    "葛飾区 奥戸総スポテニス・野球場 2026-11-15: ValueError: Unknown day status: ['']",
-    "葛飾区 奥戸総スポテニス・野球場 2026-11-21: ValueError: Unknown day status: ['']",
-    "葛飾区 奥戸総スポテニス・野球場 2026-11-22: ValueError: Unknown day status: ['']",
-    "葛飾区 奥戸総スポテニス・野球場 2026-11-23: ValueError: Unknown day status: ['']",
-    "葛飾区 search recovery: Timeout 45000ms exceeded.\n=========================== logs ===========================\nwaiting for navigation until 'domcontentloaded'\n============================================================"
+    "葛飾区 monitor: TimeoutError: "
   ],
   "skipped": false,
   "expected_scopes": 88,
